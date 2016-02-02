@@ -1,0 +1,24 @@
+Game Title: Light
+
+Setting: 8x8 board with mirrors "/" or "\". There is a starting square and an ending square.
+
+Objective: Click on mirrors to change it from / to \ or vise versa. The light will shoot from the starting square and go until it reaches
+  an edge or gets to the ending square. 
+  
+Game play: There will be levels and the player changes the mirrors to his/her desire then click the "shoot" button that sends out
+  the light. 
+  
+Additional Potential features: 
+  - main menu 
+    - levels
+    - credits
+    - exit
+  - Colors
+  - levels
+  - Highscore board. 
+  - limit number of mirrors they can move
+  - Can designate how many mirrors they have to move. Sometimes moving more mirrors is harder than moving less mirrors
+  - time limit 
+  - awards 
+  We can worry about most of these after we get the actual working platform working. 
+  
