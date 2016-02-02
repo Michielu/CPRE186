@@ -14,3 +14,10 @@ TODO:
       website from COMS227 that's extremely helpful
     http://www.javaworld.com/article/2077693/core-java/java-fun-and-games--puzzlemania.html
       Haven't looked into it yet, but seems legit. 
+      
+ Slick2D  
+  API  that allows the transition between states simply.
+  Graphics - we'll probably use this for our game
+  Frontend 
+  https://thejavablog.wordpress.com/2008/06/08/using-slick-2d-to-write-a-game/
+  
