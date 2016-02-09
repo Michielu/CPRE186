@@ -34,7 +34,7 @@ public class Menu extends BasicGameState{
 	 * Need a variable bc a static string is never going to change. Variables will change
 	 */
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-
+		g.drawOval(100, 120, 40, 100);
 	}
 	
 	/*
