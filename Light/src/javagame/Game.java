@@ -12,6 +12,15 @@ public class Game extends StateBasedGame {
 		//Giving the state "play"(when they're playing the game) the number 1
 		//TODO Create states needed for the game
 		public static final int play =1;
+		public static final int credit = 2;
+		public static final int easyScreen = 10;
+		public static final int easy1 = 11;
+		public static final int easy2 = 12;
+		//public static final int easy3 = 13;
+		//public static final int easy4 = 14;
+		//public static final int easy5 = 15;
+		//TODO I'll wait until I get the general picture before I add other 10 states
+		
 		
 		//Create a constructor - first method that gets called whenever an 
 		// object of it's class get's created
@@ -21,6 +30,11 @@ public class Game extends StateBasedGame {
 			super(gamename); //Gives title at the top of the game/window
 			this.addState(new Menu(menu)); //Add each state
 			this.addState(new Play(play));
+			this.addState(new Credit(credit));
+			this.addState(new EasyScreen(easyScreen));
+			this.addState(new Easy1(easy1));
+			this.addState(new Easy2(easy2));
+			//TODO Add other easy levels
 		}
 		 /*The method required in inheriting StateBasedGame
 		  *GameContainer is the thing that's responsible for the main game loop
@@ -37,6 +51,10 @@ public class Game extends StateBasedGame {
 		public void initStatesList(GameContainer gc) throws SlickException{ 
 			this.getState(menu).init(gc, this);
 			this.getState(play).init(gc, this);
+			//this.getState(credit).init(gc, this);
+			//this.getState(easyScreen).init(gc, this);
+			//this.getState(easy1).init(gc, this);
+			//this.getState(easy2).init(gc, this);
 			this.enterState(menu); 
 		}
 		
