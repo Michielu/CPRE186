@@ -9,6 +9,7 @@ import org.lwjgl.input.Mouse;
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Menu extends BasicGameState{	
 	
+	public String mouse = "No input yet";
 	/*
 	 * int state is the ID number of the state 
 	 * for menu, it was (0)
@@ -35,6 +36,7 @@ public class Menu extends BasicGameState{
 	 */
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawOval(100, 120, 40, 100);
+		g.drawString(mouse, 50, 50);
 	}
 	
 	/*
@@ -45,7 +47,9 @@ public class Menu extends BasicGameState{
 	 * retrieve it from java and put it in a variable.
 	 */
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
-		
+		int xPos = Mouse.getX();
+		int yPos = Mouse.getY();
+		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
 	}
 	
 	/*
