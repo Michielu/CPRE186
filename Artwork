@@ -18,10 +18,11 @@ reset button
 "Next level" button(arrow)
 "back level" button(arrow)
 
-//These should fit into the picture 
+//These should fit into the picture
 Beginning square picture
 End square picture 
-Walls 
-mirrors 
-light travels 
-light hitting mirrors 
+Walls (70x70)
+mirrors (70x70)
+light travels (70x70)
+light hitting mirrors (70x70)
+blank tile (70x70)
