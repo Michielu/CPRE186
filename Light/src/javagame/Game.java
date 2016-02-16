@@ -16,9 +16,9 @@ public class Game extends StateBasedGame {
 		public static final int easyScreen = 10;
 		public static final int easy1 = 11;
 		public static final int easy2 = 12;
-		//public static final int easy3 = 13;
-		//public static final int easy4 = 14;
-		//public static final int easy5 = 15;
+		public static final int easy3 = 13;
+		public static final int easy4 = 14;
+		public static final int easy5 = 15;
 		//TODO I'll wait until I get the general picture before I add other 10 states
 		
 		
@@ -49,12 +49,13 @@ public class Game extends StateBasedGame {
 		  * enterState = what screen to first show the user.
 		  */
 		public void initStatesList(GameContainer gc) throws SlickException{ 
+			
 			this.getState(menu).init(gc, this);
 			this.getState(play).init(gc, this);
-			//this.getState(credit).init(gc, this);
-			//this.getState(easyScreen).init(gc, this);
-			//this.getState(easy1).init(gc, this);
-			//this.getState(easy2).init(gc, this);
+			this.getState(credit).init(gc, this);
+			this.getState(easyScreen).init(gc, this);
+			this.getState(easy1).init(gc, this);
+			this.getState(easy2).init(gc, this);
 			this.enterState(menu); 
 		}
 		
