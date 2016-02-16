@@ -8,7 +8,7 @@ import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Menu extends BasicGameState{	
-	
+	Image gameBoard;
 	public String mouse = "No input yet";
 	/*
 	 * int state is the ID number of the state 
@@ -24,7 +24,7 @@ public class Menu extends BasicGameState{
 	 * init = initial value 
 	 */
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
-
+		gameBoard = new Image("res/puzzle_buttons_dimensions.png");
 	}
 	
 	/*
@@ -34,8 +34,8 @@ public class Menu extends BasicGameState{
 	 * g. has some built in methods - look up graphic 2d on java API page
 	 * Need a variable bc a static string is never going to change. Variables will change
 	 */
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		g.drawOval(100, 120, 40, 100);
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {		
+		gameBoard.draw(0, 0);
 		g.drawString(mouse, 50, 50);
 	}
 	

@@ -7,7 +7,7 @@ import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Play extends BasicGameState{
-	
+	public String mouse = "No input yet";
 	/*
 	 * int state is the ID number of the state 
 	 * for play, it is 1
@@ -31,7 +31,7 @@ public class Play extends BasicGameState{
 	 * Graphics are always named g
 	 */
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		//g.drawString("This is the play state", 100, 100);
+		g.drawString(mouse, 50, 50);
 	}
 	
 	/*
@@ -39,7 +39,9 @@ public class Play extends BasicGameState{
 	 * If we want animation, we need the screen to update
 	 */
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
-		
+		int xPos = Mouse.getX();
+		int yPos = Mouse.getY();
+		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
 	}
 	
 	/*
