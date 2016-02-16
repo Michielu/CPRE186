@@ -18,12 +18,7 @@ public class Game extends StateBasedGame {
 		public static final int easy2 = 12;
 		public static final int easy3 = 13;
 		public static final int easy4 = 14;
-<<<<<<< HEAD
-		public static final int easy5 = 15;//screwing a
-=======
 		public static final int easy5 = 15;
-		public static final int mediumScreen = 20;
->>>>>>> origin/master
 		//TODO I'll wait until I get the general picture before I add other 10 states
 		
 		
@@ -39,9 +34,6 @@ public class Game extends StateBasedGame {
 			this.addState(new EasyScreen(easyScreen));
 			this.addState(new Easy1(easy1));
 			this.addState(new Easy2(easy2));
-			//this.addState(new Easy3(easy3));
-			//this.addState(new Easy4(easy4));
-			//this.addState(new Easy5(easy5));
 			//TODO Add other easy levels
 		}
 		 /*The method required in inheriting StateBasedGame
