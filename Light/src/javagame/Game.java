@@ -18,7 +18,7 @@ public class Game extends StateBasedGame {
 		public static final int easy2 = 12;
 		public static final int easy3 = 13;
 		public static final int easy4 = 14;
-		public static final int easy5 = 15;
+		public static final int easy5 = 15;//screwing a
 		//TODO I'll wait until I get the general picture before I add other 10 states
 		
 		

@@ -37,7 +37,7 @@ public class Menu extends BasicGameState{
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawOval(100, 120, 40, 100);
 		g.drawString(mouse, 50, 50);
-	}
+	}//just checking
 	
 	/*
 	 * Update: updates image on screen - 
