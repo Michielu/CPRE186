@@ -6,7 +6,7 @@ import org.newdawn.slick.state.*;
 public class Game extends StateBasedGame {
 	
 		//Game name
-		public static final String gamename = "Light"; //hi
+		public static final String gamename = "Light"; //hello
 		//Giving the state "menu" the number 0 to help differentiate 
 		public static final int menu = 0;
 		//Giving the state "play"(when they're playing the game) the number 1
