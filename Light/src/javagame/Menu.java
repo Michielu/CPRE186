@@ -8,7 +8,7 @@ import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Menu extends BasicGameState{	
-	Image gameBoard;
+	Image mainMenu;
 	public String mouse = "No input yet";
 	/*
 	 * int state is the ID number of the state 
@@ -24,7 +24,7 @@ public class Menu extends BasicGameState{
 	 * init = initial value 
 	 */
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
-		gameBoard = new Image("res/puzzle_buttons_dimensions.png");
+		mainMenu = new Image("res/menus/main_menu(1080x720).png");
 	}
 	
 	/*
@@ -35,7 +35,7 @@ public class Menu extends BasicGameState{
 	 * Need a variable bc a static string is never going to change. Variables will change
 	 */
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {		
-		gameBoard.draw(0, 0);
+		mainMenu.draw(0, 0);
 		g.drawString(mouse, 50, 50);
 	}//just checking
 	
@@ -50,6 +50,22 @@ public class Menu extends BasicGameState{
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
+		
+		
+		  Input input = gc.getInput();
+		  //This checks to see if the mouse is in the circle
+		  if((xPos>470 && xPos<600) && (yPos<475 && yPos > 425)){
+		   //This checks to see if the mouse button is down
+			   if(input.isMouseButtonDown(0)){
+			   	sbg.enterState(1);
+			   }
+		   }
+		  //Exit button
+		  if((xPos >480&& xPos<590)&& (yPos>150 && yPos < 195)){
+				if(input.isMouseButtonDown(0)){
+					System.exit(0);
+				}
+			}
 	}
 	
 	/*
