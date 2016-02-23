@@ -3,12 +3,14 @@ package javagame;
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
+import javax.swing.Timer;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Play extends BasicGameState{
 	public String mouse = "No input yet";
 	
 	Image levelMenus;
+	Timer delay;
 	
 	/*
 	 * int state is the ID number of the state 
@@ -45,6 +47,7 @@ public class Play extends BasicGameState{
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
+		//delay = new Timer();
 		
 		Input input = gc.getInput();
 		//Go to menu state

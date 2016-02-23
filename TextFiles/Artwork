@@ -1,0 +1,27 @@
+.png 
+Screen size 1080x720
+
+Main screen picture (1080x720)
+Credit's page picture (1080x720)
+
+Each level: 
+- Easy (1080 x720)
+- Medium (1080 x720)
+- Hard (1080 x720)
+
+Back button
+Play button
+Easy button
+Credit button
+exit button
+reset button
+"Next level" button(arrow)
+"back level" button(arrow)
+
+//These should fit into the picture 
+Beginning square picture
+End square picture 
+Walls 
+mirrors 
+light travels 
+light hitting mirrors 
