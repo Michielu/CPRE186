@@ -51,21 +51,21 @@ public class Menu extends BasicGameState{
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
 		
-		
-		  Input input = gc.getInput();
-		  //This checks to see if the mouse is in the circle
-		  if((xPos>470 && xPos<600) && (yPos<475 && yPos > 425)){
-		   //This checks to see if the mouse button is down
-			   if(input.isMouseButtonDown(0)){
-			   	sbg.enterState(1);
-			   }
-		   }
+		Input input = gc.getInput();
+		  
+		//This checks to see if the mouse is in the circle
+		if((xPos>470 && xPos<600) && (yPos<475 && yPos > 425)){
+			//This checks to see if the mouse button is down
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(1);
+			}
+		}
 		  //Exit button
 		  if((xPos >480&& xPos<590)&& (yPos>150 && yPos < 195)){
-				if(input.isMouseButtonDown(0)){
-					System.exit(0);
-				}
-			}
+			  if(input.isMouseButtonDown(0)){
+				  System.exit(0);
+			  }
+		  }
 	}
 	
 	/*

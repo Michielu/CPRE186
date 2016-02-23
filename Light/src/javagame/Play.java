@@ -2,7 +2,6 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
-import org.newdawn.slick.Image;
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
@@ -46,6 +45,32 @@ public class Play extends BasicGameState{
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
+		
+		Input input = gc.getInput();
+		//Go to menu state
+		if((xPos>460 && xPos<625) && (yPos<275 && yPos > 231)){
+			if(input.isMouseButtonDown(0)){
+			   	sbg.enterState(0);
+			}
+		}
+		//Go to easy state
+		if((xPos>465 && xPos<610) && (yPos<585 && yPos > 545)){
+			if(input.isMouseButtonDown(0)){
+			   	sbg.enterState(10);
+			}
+		}
+		//Go to medium state
+		if((xPos>424 && xPos<620) && (yPos<475 && yPos > 435)){
+			if(input.isMouseButtonDown(0)){
+			   	sbg.enterState(20); 
+			}
+		}
+		//Go to hard state
+		if((xPos>470 && xPos<615) && (yPos<370 && yPos > 334)){
+			if(input.isMouseButtonDown(0)){
+			   	sbg.enterState(30); 
+			}
+		}
 	}
 	
 	/*
