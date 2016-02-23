@@ -1,0 +1,209 @@
+0 = up
+1 = right
+2 = down
+3 = left
+
+location[x][y]
+tile[x][y]
+x = start x
+y = start y
+
+while(true)
+{
+	if (direction == 0)
+	{
+		y++
+		if (y > 7)
+		{
+			break;
+		}
+		if (tile[x][y] == blank)
+		{
+			tile[x][y] = light vertical;
+		}
+		else if (tile[x][y] == light horizontal)
+		{
+			tile[x][y] = light cross;
+		}
+		else if(tile[x][y] == mirror blank down right)
+		{
+			tile[x][y] = mirror light down right;
+		}
+		else if(tile[x][y] == mirror blank down left)
+		{
+			tile[x][y] = mirror light down left;
+		}
+		else if(tile[x][y] == mirror blank up right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror blank up left)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light up right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light up left)
+		{
+			break;
+		}
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		{
+			break;
+		}
+		else if(tile[x][y] == end)
+		{
+			win = true
+			break;
+		}
+	}
+	if (direction == 1)
+	{
+		x++
+		if (x > 7)
+		{
+			break;
+		}
+		if (tile[x][y] == blank)
+		{
+			tile[x][y] = light horizontal;
+		}
+		else if (tile[x][y] == light vertical)
+		{
+			tile[x][y] = light cross;
+		}
+		else if(tile[x][y] == mirror blank down right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror blank down left)
+		{
+			tile[x][y] = mirror light down left;
+		}
+		else if(tile[x][y] == mirror blank up right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror blank up left)
+		{
+			tile[x][y] = mirror light up left;
+		}
+		else if(tile[x][y] == mirror light up right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light down right)
+		{
+			break;
+		}
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		{
+			break;
+		}
+		else if(tile[x][y] == end)
+		{
+			win = true
+			break;
+		}
+	}
+	if (direction == 2)
+	{
+		y--
+		if (y < 0)
+		{
+			break;
+		}
+		if (tile[x][y] == blank)
+		{
+			tile[x][y] = light vertical;
+		}
+		else if (tile[x][y] == light horizontal)
+		{
+			tile[x][y] = light cross;
+		}
+		else if(tile[x][y] == mirror blank down right)
+		{
+			break
+		}
+		else if(tile[x][y] == mirror blank down left)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror blank up right)
+		{
+			tile[x][y] = mirror light up right;
+		}
+		else if(tile[x][y] == mirror blank up left)
+		{
+			tile[x][y] = mirror light up left;
+		}
+		else if(tile[x][y] == mirror light down right)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light down left)
+		{
+			break;
+		}
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		{
+			break;
+		}
+		else if(tile[x][y] == end)
+		{
+			win = true
+			break;
+		}
+	}
+		if (direction == 1)
+	{
+		x--
+		if (x < 0)
+		{
+			break;
+		}
+		if (tile[x][y] == blank)
+		{
+			tile[x][y] = light horizontal;
+		}
+		else if (tile[x][y] == light vertical)
+		{
+			tile[x][y] = light cross;
+		}
+		else if(tile[x][y] == mirror blank down right)
+		{
+			tile[x][y] == mirror light down right;
+		}
+		else if(tile[x][y] == mirror blank down left)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror blank up right)
+		{
+			tile[x][y] = mirror light up right;
+		}
+		else if(tile[x][y] == mirror blank up left)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light up left)
+		{
+			break;
+		}
+		else if(tile[x][y] == mirror light down left)
+		{
+			break;
+		}
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		{
+			break;
+		}
+		else if(tile[x][y] == end)
+		{
+			win = true
+			break;
+		}
+	}
+}
