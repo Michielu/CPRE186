@@ -3,14 +3,13 @@ package javagame;
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
-import javax.swing.Timer;
+
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Play extends BasicGameState{
 	public String mouse = "No input yet";
-	
+	public boolean canGoOn;
 	Image levelMenus;
-	Timer delay;
 	
 	/*
 	 * int state is the ID number of the state 
@@ -26,7 +25,6 @@ public class Play extends BasicGameState{
 	 */
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		levelMenus = new Image("res/menus/levels_menu(1080x720).png");
-		
 	}
 	
 	/*
@@ -44,10 +42,10 @@ public class Play extends BasicGameState{
 	 * If we want animation, we need the screen to update
 	 */
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
+		
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
-		//delay = new Timer();
 		
 		Input input = gc.getInput();
 		//Go to menu state
@@ -62,11 +60,16 @@ public class Play extends BasicGameState{
 			   	sbg.enterState(10);
 			}
 		}
+		//Checks if the mouse is down
+		if(!input.isMouseButtonDown(0)){
+			canGoOn=true;
+		}
 		//Go to medium state
-		if((xPos>424 && xPos<620) && (yPos<475 && yPos > 435)){
+		if(canGoOn&&(xPos>424 && xPos<620) && (yPos<475 && yPos > 435)){
 			if(input.isMouseButtonDown(0)){
-			   	sbg.enterState(20); 
-			}
+				canGoOn = false;
+				sbg.enterState(20);
+			}	
 		}
 		//Go to hard state
 		if((xPos>470 && xPos<615) && (yPos<370 && yPos > 334)){

@@ -7,6 +7,7 @@ import org.lwjgl.input.Mouse;
 //Every screen inherits from BasicGameState. Extends = inherits
 public class HardScreen extends BasicGameState{
 	public String mouse = "No input yet";
+	public boolean canGoOn;
 	
 	Image hardLevels;
 	public HardScreen(int state){ 
@@ -23,6 +24,7 @@ public class HardScreen extends BasicGameState{
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
+
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
@@ -32,6 +34,41 @@ public class HardScreen extends BasicGameState{
 		if((xPos>460 && xPos<625) && (yPos<280 && yPos > 245)){
 			if(input.isMouseButtonDown(0)){
 				sbg.enterState(1);
+			}
+		}
+
+		//Go to level 1 state
+		if((xPos>225 && xPos<300) && (yPos<470 && yPos > 400)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(31);
+			}
+		}
+		//Go to level 2 state
+		if((xPos>367 && xPos<430) && (yPos<470 && yPos > 400)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(32);
+			}
+		}
+		//Go to level 3 state
+		if(!input.isMouseButtonDown(0)){
+			canGoOn= true;
+		}
+		if(canGoOn&&(xPos>507 && xPos<575) && (yPos<470 && yPos > 400)){
+			if(input.isMouseButtonDown(0)){
+				canGoOn = false;
+				sbg.enterState(33);
+			}
+		}
+		//Go to level 4 state
+		if((xPos>645 && xPos<715) && (yPos<470 && yPos > 400)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(34);
+			}
+		}
+		//Go to level 5 state
+		if((xPos>786 && xPos<860) && (yPos<470 && yPos > 400)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(35);
 			}
 		}
 	}

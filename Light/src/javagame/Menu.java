@@ -60,6 +60,12 @@ public class Menu extends BasicGameState{
 				sbg.enterState(1);
 			}
 		}
+		 //Credits button
+		  if((xPos >425&& xPos<655)&& (yPos>287 && yPos < 325)){
+			  if(input.isMouseButtonDown(0)){
+				  sbg.enterState(2);
+			  }
+		  }
 		  //Exit button
 		  if((xPos >480&& xPos<590)&& (yPos>150 && yPos < 195)){
 			  if(input.isMouseButtonDown(0)){
