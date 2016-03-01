@@ -7,7 +7,7 @@ import org.lwjgl.input.Mouse;
 //Every screen inherits from BasicGameState. Extends = inherits
 public class MediumScreen extends BasicGameState{
 	public String mouse = "No input yet";
-	private boolean canGoOn;
+
 	
 	Image mediumLevels;
 	public MediumScreen(int state){ 
@@ -15,7 +15,7 @@ public class MediumScreen extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		mediumLevels = new Image("res/menus/medium_levels(1080x720).png");
-		canGoOn = false;
+		
 		
 	}
 	
@@ -51,11 +51,11 @@ public class MediumScreen extends BasicGameState{
 		}
 		//Go to level 3 state
 		if(!input.isMouseButtonDown(0)){
-			canGoOn= true;
+			Play.canGoOn= true;
 		}
-		if(canGoOn&&(xPos>507 && xPos<575) && (yPos<470 && yPos > 400)){
+		if(Play.canGoOn&&(xPos>507 && xPos<575) && (yPos<470 && yPos > 400)){
 			if(input.isMouseButtonDown(0)){
-				canGoOn = false;
+				Play.canGoOn = false;
 				sbg.enterState(23);
 			}
 		}
