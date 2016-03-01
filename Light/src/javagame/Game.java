@@ -9,7 +9,6 @@ public class Game extends StateBasedGame {
 		//Giving the state "menu" the number 0 to help differentiate 
 		public static final int menu = 0;
 		//Giving the state "play"(when they're playing the game) the number 1
-		//TODO Create states needed for the game
 		public static final int play =1;
 		public static final int credit = 2;
 		public static final int easyScreen = 10;
