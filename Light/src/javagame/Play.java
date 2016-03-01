@@ -3,15 +3,11 @@ package javagame;
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
-//<<<<<<< HEAD
-//
-//=======
-//>>>>>>> cf88821723e99a276e2a19c79ad3b89ec0e08b32
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Play extends BasicGameState{
 	public String mouse = "No input yet";
-	public boolean canGoOn;
+	public static boolean canGoOn;
 	Image levelMenus;
 	
 	/*
