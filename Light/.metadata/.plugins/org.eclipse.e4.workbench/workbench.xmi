@@ -256,7 +256,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_gY-WQs9cEeWN27SkCRefug" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gZIHQM9cEeWN27SkCRefug" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_gBXup89cEeWN27SkCRefug"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Hel4Z9_bEeWC4d5pCHYV2Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_gBXup89cEeWN27SkCRefug"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_gY-WQ89cEeWN27SkCRefug" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -277,7 +277,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_gY-WR89cEeWN27SkCRefug" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_gZIHSs9cEeWN27SkCRefug" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_gBN-2c9cEeWN27SkCRefug"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_HevCVN_bEeWC4d5pCHYV2Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_gBN-2c9cEeWN27SkCRefug"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_gY-WSM9cEeWN27SkCRefug" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -366,6 +366,10 @@
     <bindings xmi:id="_gCtyvs9cEeWN27SkCRefug" keySequence="CTRL+2 M" command="_gBXu189cEeWN27SkCRefug"/>
     <bindings xmi:id="_gC28VM9cEeWN27SkCRefug" keySequence="CTRL+2 L" command="_gBN-Ec9cEeWN27SkCRefug"/>
     <bindings xmi:id="_gC28WM9cEeWN27SkCRefug" keySequence="CTRL+2 F" command="_gBXvMc9cEeWN27SkCRefug"/>
+    <bindings xmi:id="_HKScUN_bEeWC4d5pCHYV2Q" keySequence="ALT+CTRL+J" command="_HJZEdd_bEeWC4d5pCHYV2Q"/>
+    <bindings xmi:id="_HKcNUN_bEeWC4d5pCHYV2Q" keySequence="ALT+CTRL+I" command="_HJZEc9_bEeWC4d5pCHYV2Q"/>
+    <bindings xmi:id="_HKlXQN_bEeWC4d5pCHYV2Q" keySequence="ALT+CTRL+K" command="_HJZEdN_bEeWC4d5pCHYV2Q"/>
+    <bindings xmi:id="_HKlXQd_bEeWC4d5pCHYV2Q" keySequence="ALT+CTRL+O" command="_HJZEct_bEeWC4d5pCHYV2Q"/>
   </bindingTables>
   <bindingTables xmi:id="_gCRGcc9cEeWN27SkCRefug" elementId="org.eclipse.jdt.ui.propertiesEditorScope" bindingContext="_gBhftc9cEeWN27SkCRefug">
     <bindings xmi:id="_gCRGcs9cEeWN27SkCRefug" keySequence="CTRL+SHIFT+C" command="_gBN9qM9cEeWN27SkCRefug"/>
@@ -706,6 +710,7 @@
   <bindingTables xmi:id="_goCGA89cEeWN27SkCRefug" bindingContext="_goCGAs9cEeWN27SkCRefug"/>
   <bindingTables xmi:id="_goCGBc9cEeWN27SkCRefug" bindingContext="_goCGBM9cEeWN27SkCRefug"/>
   <bindingTables xmi:id="_goCGB89cEeWN27SkCRefug" bindingContext="_goCGBs9cEeWN27SkCRefug"/>
+  <bindingTables xmi:id="_HcNSwd_bEeWC4d5pCHYV2Q" bindingContext="_HcNSwN_bEeWC4d5pCHYV2Q"/>
   <rootContext xmi:id="_gAVMxM9cEeWN27SkCRefug" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_gAVMxc9cEeWN27SkCRefug" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
       <children xmi:id="_gAVMxs9cEeWN27SkCRefug" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -790,6 +795,7 @@
   <rootContext xmi:id="_goCGAs9cEeWN27SkCRefug" elementId="org.eclipse.ui.actionSet.openFiles" name="Auto::org.eclipse.ui.actionSet.openFiles"/>
   <rootContext xmi:id="_goCGBM9cEeWN27SkCRefug" elementId="org.eclipse.ui.edit.text.actionSet.presentation" name="Auto::org.eclipse.ui.edit.text.actionSet.presentation"/>
   <rootContext xmi:id="_goCGBs9cEeWN27SkCRefug" elementId="org.eclipse.wb.core.ui.actionset" name="Auto::org.eclipse.wb.core.ui.actionset"/>
+  <rootContext xmi:id="_HcNSwN_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.actions.SearchActionSet" name="Auto::net.sf.jautodoc.actions.SearchActionSet"/>
   <descriptors xmi:id="_gFZS8M9cEeWN27SkCRefug" elementId="org.eclipse.e4.ui.compatibility.editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor">
     <tags>Editor</tags>
   </descriptors>
@@ -1959,6 +1965,11 @@
   <commands xmi:id="_gRAGAs9cEeWN27SkCRefug" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.tasks.ui.open.repositories.view" commandName="Show Task Repositories View" description="Show Task Repositories View" category="_gBEzwM9cEeWN27SkCRefug"/>
   <commands xmi:id="_gRAGA89cEeWN27SkCRefug" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_gBEzwM9cEeWN27SkCRefug"/>
   <commands xmi:id="_gRAtEM9cEeWN27SkCRefug" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_gBEzwM9cEeWN27SkCRefug"/>
+  <commands xmi:id="_HJZEct_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.commands.AddHeaderDlg" commandName="Add Header with Dialog" category="_HJZEcd_bEeWC4d5pCHYV2Q"/>
+  <commands xmi:id="_HJZEc9_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.commands.AddJavadocDlg" commandName="Add Javadoc with Dialog" category="_HJZEcd_bEeWC4d5pCHYV2Q"/>
+  <commands xmi:id="_HJZEdN_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.commands.AddHeader" commandName="Add Header" category="_HJZEcd_bEeWC4d5pCHYV2Q"/>
+  <commands xmi:id="_HJZEdd_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.commands.AddJavadoc" commandName="Add Javadoc" category="_HJZEcd_bEeWC4d5pCHYV2Q"/>
+  <commands xmi:id="_HbT64N_bEeWC4d5pCHYV2Q" elementId="AUTOGEN:::net.sf.jautodoc.actions.SearchActionSet/net.sf.jautodoc.actions.OpenSearchPage" commandName="JAutodoc..." category="_gBEzwM9cEeWN27SkCRefug"/>
   <addons xmi:id="_gAVMyM9cEeWN27SkCRefug" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_gAVMyc9cEeWN27SkCRefug" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_gAVMys9cEeWN27SkCRefug" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2004,4 +2015,5 @@
   <categories xmi:id="_gBEzvs9cEeWN27SkCRefug" elementId="org.eclipse.mylyn.commons.repositories.ui.category.Team" name="Team"/>
   <categories xmi:id="_gBEzv89cEeWN27SkCRefug" elementId="org.eclipse.oomph.commands" name="Oomph"/>
   <categories xmi:id="_gBEzwM9cEeWN27SkCRefug" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
+  <categories xmi:id="_HJZEcd_bEeWC4d5pCHYV2Q" elementId="net.sf.jautodoc.categories.JAutodoc" name="JAutodoc"/>
 </application:Application>

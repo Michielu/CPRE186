@@ -5,15 +5,15 @@ import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
-public class Easy1 extends BasicGameState{
+public class Medium3 extends BasicGameState{
 	Image gameBoard;
 	public String mouse = "No input yet";
 
-	public Easy1(int state){ 
+	public Medium3(int state){ 
 		
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
-		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
+		gameBoard = new Image("res/backgrounds/puzzle_baclground2(1080x720).png");
 		
 	}
 	
@@ -37,6 +37,6 @@ public class Easy1 extends BasicGameState{
 	
 	
 	public int getID(){
-		return 11;
+		return 23;
 	}
 }
