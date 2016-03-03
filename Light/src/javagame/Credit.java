@@ -2,21 +2,22 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
-import org.newdawn.slick.Image;
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Credit extends BasicGameState{
+	Image tempImage;
 	public String mouse = "No input yet";
 	public Credit(int state){ 
 		
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
-		
+		tempImage = new Image("res/backgrounds/creditexit.png");
 		
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		tempImage.draw(0, 0);
 		g.drawString(mouse, 50, 50);
 	}
 
@@ -24,6 +25,14 @@ public class Credit extends BasicGameState{
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
+		Input input = gc.getInput();
+		
+		//As soon as the mouse is pressed, it closes because the same spot has exit on the credits page
+		if((xPos >444&& xPos<650)&& (yPos>214 && yPos < 425)){
+			  if(input.isMouseButtonDown(0)){
+				  System.exit(0);
+			  }
+		  }
 	}
 	
 	
