@@ -33,6 +33,14 @@ public class Credit extends BasicGameState{
 				  System.exit(0);
 			  }
 		  }
+		
+		//This is also temporary; as soon as you click slightly above the exit button in credits, it take you to menu
+		if((xPos >444&& xPos<650) && (yPos<620 && yPos > 440)){
+			//This checks to see if the mouse button is down
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(0);
+			}
+		}
 	}
 	
 	
