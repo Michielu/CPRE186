@@ -51,7 +51,7 @@ while(true)
 		{
 			break;
 		}
-		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light || wall)
 		{
 			break;
 		}
@@ -102,7 +102,7 @@ while(true)
 		{
 			break;
 		}
-		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light || wall)
 		{
 			break;
 		}
@@ -153,7 +153,7 @@ while(true)
 		{
 			break;
 		}
-		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light || wall)
 		{
 			break;
 		}
@@ -204,7 +204,7 @@ while(true)
 		{
 			break;
 		}
-		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light)
+		else if(tile[x][y] == start up || start up light || start right || start right light || start down || start down light || start left || start left light || wall)
 		{
 			break;
 		}
