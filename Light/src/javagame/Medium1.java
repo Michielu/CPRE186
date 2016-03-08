@@ -31,6 +31,7 @@ public class Medium1 extends BasicGameState{
 		//Go to Menu state
 		if((xPos>890 && xPos<1074) && (yPos<720 && yPos > 655)){
 			if(input.isMouseButtonDown(0)){
+				Play.canGoOn = false;
 				sbg.enterState(0);
 			}
 		}

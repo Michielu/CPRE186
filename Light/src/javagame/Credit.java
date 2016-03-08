@@ -38,6 +38,7 @@ public class Credit extends BasicGameState{
 		if((xPos >444&& xPos<650) && (yPos<620 && yPos > 440)){
 			//This checks to see if the mouse button is down
 			if(input.isMouseButtonDown(0)){
+				Play.canGoOn = false;
 				sbg.enterState(0);
 			}
 		}
