@@ -41,8 +41,8 @@ public class Easy1 extends BasicGameState{
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
-		int xPos = Mouse.getX();
-		int yPos = Mouse.getY();
+		int xPos = Mouse.getX(); //gets the x position
+		int yPos = Mouse.getY(); //gets the y position
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
 		Input input = gc.getInput();
 		//Go to Menu state
