@@ -29,6 +29,7 @@ public class Game extends StateBasedGame {
 		public static final int hard3 = 33;
 		public static final int hard4 = 34;
 		public static final int hard5 = 35;
+		public static final int methods = 100;
 		//TODO I'll wait until I get the general picture before I add other 10 states
 		
 		
@@ -59,6 +60,7 @@ public class Game extends StateBasedGame {
 			this.addState(new Hard3(hard3));
 			this.addState(new Hard4(hard4));
 			this.addState(new Hard5(hard5));
+			this.addState(new Methods(methods));
 		}
 		 /*The method required in inheriting StateBasedGame
 		  *GameContainer is the thing that's responsible for the main game loop
@@ -95,6 +97,7 @@ public class Game extends StateBasedGame {
 			this.getState(hard3).init(gc,  this);
 			this.getState(hard4).init(gc, this);
 			this.getState(hard5).init(gc,  this);
+			this.getState(methods).init(gc, this);
 			this.enterState(menu); 
 		}
 		

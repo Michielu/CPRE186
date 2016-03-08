@@ -17,6 +17,7 @@ public class Easy3 extends BasicGameState{
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		background.draw(0, 0);
+		Methods.blankTiles();
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
@@ -26,6 +27,7 @@ public class Easy3 extends BasicGameState{
 		//Go to Menu state
 		if((xPos>890 && xPos<1074) && (yPos<720 && yPos > 655)){
 			if(input.isMouseButtonDown(0)){
+				Play.canGoOn = false;
 				sbg.enterState(0);
 			}
 		}
