@@ -18,8 +18,10 @@ public class Medium5 extends BasicGameState{
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		Methods.currentStateNum = 25;
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
+		Methods.blankTiles();
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{

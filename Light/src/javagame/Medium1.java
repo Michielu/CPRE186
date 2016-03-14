@@ -16,11 +16,15 @@ public class Medium1 extends BasicGameState{
 		//res/backgrounds/puzzle_baclground2 - has background spelled wrong
 		gameBoard = new Image("res/backgrounds/puzzle_baclground2(1080x720).png");
 		
+		
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		Methods.currentStateNum = 21;
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
+		Methods.blankTiles();
+		
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
