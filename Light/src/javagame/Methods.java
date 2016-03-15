@@ -6,6 +6,23 @@ import org.lwjgl.input.Mouse;
 
 
 public class Methods extends BasicGameState {
+	public static int X1 = 260;
+	public static int X2 = 330;
+	public static int X3 = 400;
+	public static int X4 = 470;
+	public static int X5 = 540;
+	public static int X6 = 610;
+	public static int X7 = 680;
+	public static int X8 = 750;
+	public static int Y1 = 80;
+	public static int Y2 = 150;
+	public static int Y3 = 220;
+	public static int Y4 = 290;
+	public static int Y5 = 360;
+	public static int Y6 = 430;
+	public static int Y7 = 500;
+	public static int Y8 = 570;
+	
 	public static int currentStateNum;
 	//End Tiles
 	public static Image endTile;
@@ -104,23 +121,33 @@ public class Methods extends BasicGameState {
 			generateMedium1();
 		}
 		else if(currentStateNum ==22){
-			blankTile.draw(0,200);
+			generateMedium2();
 		}
 		else if(currentStateNum ==23){
-			
+			generateMedium3();
 		}
 		else if(currentStateNum == 24){
-			
+			generateMedium4();
 		}
 		else if(currentStateNum ==25){
-			
+			generateMedium5();
 		}
 	}
 	
 	public int getID(){
 		return 100;
 	}
+	
 	public static void generateMedium1(){
+		endTile.draw(400, 500);
+		startTileUp.draw(260, 570);
+		mDownRight.draw(260, 80);
+		mDownLeft.draw(330, 80);
+		mUpRight.draw(330, 570);
+		mDownLeft.draw(750, 570);
+		mDownRight.draw(750, 500);
+	}
+	public static void generateMedium2(){
 		endTile.draw(470,80);
 		startTileUp.draw(470, 570);
 		mDownRight.draw(260,80);
@@ -131,7 +158,48 @@ public class Methods extends BasicGameState {
 		mDownLeft.draw(750, 500);
 		mUpRight.draw(260,570);
 		mUpLeft.draw(750, 570);
+		mDownRight.draw(540, 80);
+		mUpRight.draw(540, 570);
 		wallTile.draw(470,290);
 	}
-
+	public static void generateMedium3(){
+		endTile.draw(680, 150);
+		startTileUp.draw(750, 80);
+		mDownRight.draw(260, 80);
+		mUpRight.draw(260, 570);
+		mUpLeft.draw(750, 570);
+		mDownLeft.draw(750, 290);
+		mDownRight.draw(470, 290);
+		mUpRight.draw(470, 360);
+		mDownLeft.draw(680, 360);
+		mUpLeft.draw(680, 500);
+		mUpRight.draw(330, 500);
+		mDownRight.draw(330, 150);
+		
+	}
+	public static void generateMedium4(){
+		endTile.draw(750, 570);
+		startTileUp.draw(260, 570);
+		mDownRight.draw(260, 80);
+		mDownLeft.draw(330, 80);
+		mUpRight.draw(330, 570);
+		mUpLeft.draw(400, 570);
+		mDownRight.draw(400, 360);
+		mDownRight.draw(X6, Y5);
+		mUpRight.draw(X6, Y8);
+		mUpLeft.draw(X7, Y8);
+		mDownRight.draw(X7, Y1);
+		mDownLeft.draw(X8, Y1);
+		
+	}
+	public static void generateMedium5(){
+		endTile.draw(X2, Y2);
+		startTileUp.draw(X1, Y1);
+		mDownRight.draw(X8, Y1);
+		mUpLeft.draw(X8, Y2);
+		mDownRight.draw(X5, Y2);
+		mUpLeft.draw(X5, Y8);
+		mUpRight.draw(X4, Y8);
+		mDownLeft.draw(X4, Y2);
+	}
 }
