@@ -18,6 +18,7 @@ public class Hard4 extends BasicGameState{
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		Methods.currentStateNum = 34;
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
 	}

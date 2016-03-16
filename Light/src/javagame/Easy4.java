@@ -17,6 +17,7 @@ public class Easy4 extends BasicGameState{
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		Methods.currentStateNum = 14;
 		gameBoard.draw(0,0);
 		Methods.blankTiles();
 	}

@@ -117,7 +117,22 @@ public class Methods extends BasicGameState {
 		}
 		xStart = 260;
 		yStart = 80;
-		if(currentStateNum == 21 ){
+		if (currentStateNum ==11){
+			generateEasy1();
+		}
+		else if(currentStateNum == 12){
+			generateEasy2();
+		}
+		else if (currentStateNum == 13){
+			generateEasy3();
+		}
+		else if(currentStateNum == 14){
+			generateEasy4();
+		}
+		else if(currentStateNum == 15){
+			generateEasy5();
+		}
+		else if(currentStateNum == 21 ){
 			generateMedium1();
 		}
 		else if(currentStateNum ==22){
@@ -132,10 +147,69 @@ public class Methods extends BasicGameState {
 		else if(currentStateNum ==25){
 			generateMedium5();
 		}
+		
 	}
 	
 	public int getID(){
 		return 100;
+	}
+	
+	public static void generateEasy1(){
+		startTileUp.draw(X1,Y8);
+		endTile.draw(X8, Y1);
+		mDownRight.draw(X1,Y5);
+		mUpLeft.draw(X8, Y5);
+		mUpLeft.draw(X7, Y8);
+		mDownRight.draw(X7,Y1);
+	}
+	public static void generateEasy2(){
+		startTileUp.draw(X3, Y8);
+		endTile.draw(X6, Y2);
+		mDownRight.draw(X3, Y1);
+		mDownLeft.draw(X8, Y1);
+		mUpLeft.draw(X8, Y7);
+		mUpRight.draw(X2, Y7);
+		mDownRight.draw(X2, Y2);
+		
+	}
+	public static void generateEasy3(){
+		startTileUp.draw(X3,Y8);
+		endTile.draw(X5, Y1);
+		mDownRight.draw(X3, Y6);
+		mDownLeft.draw(X5, Y6);
+		mUpRight.draw(X5, Y8);
+		mUpLeft.draw(X8, Y8);
+		mDownLeft.draw(X8, Y4);
+		mUpRight.draw(X5, Y4);
+	}
+	public static void generateEasy4(){
+		startTileUp.draw(X3, Y5);
+		endTile.draw(X6, Y4);
+		mDownLeft.draw(X7, Y5);
+		mUpLeft.draw(X7, Y7);
+		mDownRight.draw(X3, Y7);
+		mUpRight.draw(X3, Y8);
+		mUpLeft.draw(X8, Y8);
+		mDownLeft.draw(X8, Y1);
+		mDownRight.draw(X6, Y1);
+	}
+	public static void generateEasy5(){
+		startTileUp.draw(X1, Y8);
+		endTile.draw(X4, Y4);
+		mUpLeft.draw(X8, Y8);
+		mDownLeft.draw(X8, Y1);
+		mDownRight.draw(X1, Y1);
+		mUpRight.draw(X1, Y7);
+		mUpLeft.draw(X7, Y7);
+		mDownLeft.draw(X7, Y2);
+		mDownRight.draw(X2, Y2);
+		mUpRight.draw(X2, Y6);
+		mUpLeft.draw(X6, Y6);
+		mDownLeft.draw(X6, Y3);
+		mDownRight.draw(X3, Y3);
+		mUpRight.draw(X3, Y5);
+		mUpLeft.draw(X5,Y5);
+		mDownLeft.draw(X5, Y4);
 	}
 	
 	public static void generateMedium1(){
