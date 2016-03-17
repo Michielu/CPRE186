@@ -147,6 +147,21 @@ public class Methods extends BasicGameState {
 		else if(currentStateNum ==25){
 			generateMedium5();
 		}
+		else if(currentStateNum == 31){
+			generateHard1();
+		}
+		else if(currentStateNum ==32){
+			generateHard2();
+		}
+		else if(currentStateNum == 33){
+			generateHard3();
+		}
+		else if(currentStateNum ==34){
+			generateHard4();
+		}
+		else if (currentStateNum==35){
+			generateHard5();
+		}
 		
 	}
 	
@@ -210,8 +225,7 @@ public class Methods extends BasicGameState {
 		mUpRight.draw(X3, Y5);
 		mUpLeft.draw(X5,Y5);
 		mDownLeft.draw(X5, Y4);
-	}
-	
+	}	
 	public static void generateMedium1(){
 		endTile.draw(400, 500);
 		startTileUp.draw(260, 570);
@@ -267,6 +281,7 @@ public class Methods extends BasicGameState {
 		
 	}
 	public static void generateMedium5(){
+
 		endTile.draw(X2, Y2);
 		startTileUp.draw(X1, Y1);
 		mDownRight.draw(X8, Y1);
@@ -275,5 +290,105 @@ public class Methods extends BasicGameState {
 		mUpLeft.draw(X5, Y8);
 		mUpRight.draw(X4, Y8);
 		mDownLeft.draw(X4, Y2);
+	}
+	public static void generateHard1(){
+		startTileUp.draw(X3, Y8);
+		endTile.draw(X7, Y1);
+		mUpRight.draw(X2, Y8);
+		mDownRight.draw(X2, Y6);
+		mDownLeft.draw(X7, Y6);
+		mUpLeft.draw(X7, Y7);
+		mUpRight.draw(X1, Y7);
+		mDownRight.draw(X1, Y5);
+		mUpLeft.draw(X3, Y5);
+		mDownRight.draw(X3, Y3);
+		mDownLeft.draw(X4, Y3);
+		mUpLeft.draw(X4, Y4);
+		mUpRight.draw(X1, Y4);
+		mDownRight.draw(X1, Y1);
+		wallTile.draw(X7, Y4);
+		//Distraction tiles TODO add more
+		mUpRight.draw(X8, Y3);
+		mDownLeft.draw(X8, Y5);
+	}
+	public static void generateHard2(){
+		startTileUp.draw(X6, Y3);
+		endTile.draw(X1, Y7);
+		mUpRight.draw(X6, Y5);
+		mUpLeft.draw(X8, Y5);
+		mDownLeft.draw(X8, Y1);
+		mDownRight.draw(X5, Y1);
+		mUpLeft.draw(X5,  Y3);
+		mUpRight.draw(X2, Y3);
+		mDownRight.draw(X2, Y1);
+		mDownLeft.draw(X3, Y1);
+		mUpLeft.draw(X3, Y2);
+		mDownRight.draw(X1, Y2);
+		mUpRight.draw(X1, Y6);
+		mDownLeft.draw(X6, Y6);
+		mUpLeft.draw(X6, Y8);
+		mUpRight.draw(X4, Y8);
+		mDownLeft.draw(X4, Y4);
+		mDownRight.draw(X3, Y4);
+		mUpLeft.draw(X3, Y7);
+		//TODO add distracting mirrors
+	}
+	public static void generateHard3(){
+		startTileDown.draw(X1, Y1);
+		endTile.draw(X8, Y1);
+		mUpRight.draw(X1, Y8);
+		mUpLeft.draw(X2, Y8);
+		mDownRight.draw(X2, Y5);
+		mUpLeft.draw(X3, Y5);
+		mDownRight.draw(X3, Y1);
+		mDownLeft.draw(X4, Y1);
+		mUpRight.draw(X4, Y8);
+		mUpLeft.draw(X8, Y8);
+		mDownLeft.draw(X8,Y7);
+		mUpRight.draw(X6, Y7);
+		mDownLeft.draw(X6, Y2);
+		mUpRight.draw(X5, Y2);
+		mDownRight.draw(X5, Y1);
+		wallTile.draw(X8,Y2);
+		//TODO add distracting mirrors
+		mUpRight.draw(X3, Y6);
+		mUpLeft.draw(X8, Y6);
+		
+	}
+	public static void generateHard4(){
+		startTileUp.draw(X4, Y4);
+		endTile.draw(X5, Y5);
+		mUpRight.draw(X4, Y6);
+		mUpLeft.draw(X6, Y6);
+		mDownRight.draw(X6, Y4);
+		mDownLeft.draw(X7, Y4);
+		mUpLeft.draw(X7, Y7);
+		mUpRight.draw(X3, Y7);
+		mDownRight.draw(X3, Y3);
+		mUpLeft.draw(X8, Y3);
+		mDownLeft.draw(X8,Y2);
+		mDownRight.draw(X2, Y2);
+		mUpLeft.draw(X2, Y8);
+		mUpRight.draw(X1, Y8);
+		mDownRight.draw(X1, Y5);
+		//TODO add distracting mirrors and walls
+	}
+	public static void generateHard5(){
+		startTileUp.draw(X2, Y5);
+		endTile.draw(X7, Y3);
+		mDownRight.draw(X2, Y4);
+		mDownLeft.draw(X4, Y4);
+		mUpRight.draw(X4,Y6);
+		mUpLeft.draw(X8, Y6);
+		mDownLeft.draw(X8, Y2);
+		mDownRight.draw(X5, Y2);
+		mUpLeft.draw(X5, Y7);
+		mUpRight.draw(X1, Y7);
+		mDownRight.draw(X1, Y1);
+		mDownLeft.draw(X6, Y1);
+		mUpLeft.draw(X6, Y8);
+		mUpRight.draw(X3, Y8);
+		mDownRight.draw(X3,Y3);
+		//TODO add distracting mirrors and walls
 	}
 }
