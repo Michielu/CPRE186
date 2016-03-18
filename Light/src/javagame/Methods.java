@@ -34,7 +34,7 @@ public class Methods extends BasicGameState {
 	public static int DOWN = 2;
 	public static int LEFT =3;
 	public static int direction; 
-	public static int[][] location = new int[8][8] ;
+	public static int[][] location = new int[9][9] ;
 	
 	
 	
@@ -119,10 +119,7 @@ public class Methods extends BasicGameState {
 	}
 	
 	public static void shoot() throws SlickException{
-
-		shootLight(direction, xStart, yStart, arrayX,arrayY);
-		//generateHard1();
-		
+		shootLight(direction, xStart, yStart, arrayX,arrayY);		
 	}
 
 	public static void blankTiles() throws SlickException{
@@ -203,12 +200,12 @@ public class Methods extends BasicGameState {
 		
 		endTile.draw(X8, Y1);
 		
-		location[8][1]=stop;
+		//location[8][9]=stop;
 		
-		mDownRight.draw(X1,Y5);
-		mUpLeft.draw(X8, Y5);
 		mUpLeft.draw(X7, Y8);
 		mDownRight.draw(X7,Y1);
+		mDownRight.draw(X1,Y5);
+		mUpLeft.draw(X8, Y5);
 	}
 	public static void generateEasy2(){
 		startTileUp.draw(X3, Y8);
@@ -436,10 +433,13 @@ public class Methods extends BasicGameState {
 		else if(direction ==1){
 			startLightRight.draw(startX,startY);
 			startX+=70;
-			while(aX<8){//location[x][y]!= stop){
+			while(aX<8){
 				beamHorizontal.draw(startX, startY);
 				startX+=70;
 				aX+=1;
+//				if(location[6][8]==0){
+//					break;
+//				}
 			}
 		}
 		else if(direction ==2){
