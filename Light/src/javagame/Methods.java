@@ -10,7 +10,12 @@ public class Methods extends BasicGameState {
 	public static int yStart = 80;
 	public static int arrayX;
 	public static int arrayY;
-	public static int stop = 100;
+	public static int target = 100;
+	//Mirrors
+	public static int leftUp = 10;
+	public static int leftDown = 20;
+	public static int rightUp = 30;
+	public static int rightDown = 40;
 	
 	public static int X1 = 260;
 	public static int X2 = 330;
@@ -119,7 +124,13 @@ public class Methods extends BasicGameState {
 	}
 	
 	public static void shoot() throws SlickException{
-		shootLight(direction, xStart, yStart, arrayX,arrayY);		
+		/*xStart = x coordinate on GUI
+		 * yStart = y coordinate on GUI
+		 * arrayX = location[][] x position
+		 * arrayY = location[][] y position	 
+		 * 
+		 */
+		shootLight(direction, xStart, yStart, arrayX, arrayY);		
 	}
 
 	public static void blankTiles() throws SlickException{
@@ -198,12 +209,18 @@ public class Methods extends BasicGameState {
 		arrayY =8;
 		direction = 1;
 		
-		endTile.draw(X8, Y1);
 		
-		//location[8][9]=stop;
+		endTile.draw(X8, Y1);
+		location[8][1] = target;
+		
 		
 		mUpLeft.draw(X7, Y8);
+		location[7][8]=leftUp;
+		
+		
 		mDownRight.draw(X7,Y1);
+		location[7][1] = rightDown;
+		
 		mDownRight.draw(X1,Y5);
 		mUpLeft.draw(X8, Y5);
 	}
@@ -437,9 +454,23 @@ public class Methods extends BasicGameState {
 				beamHorizontal.draw(startX, startY);
 				startX+=70;
 				aX+=1;
-//				if(location[6][8]==0){
-//					break;
-//				}
+				if(location[aX][aY]==leftUp){
+					startX -= 70;
+					direction = UP;
+					break;
+				}
+			}
+			if(location[aX][aY] == leftUp){
+				mUpLeftLight.draw(startX,startY);
+				startY-=70;
+				while(aY>0 && aY <= 8){
+					beamVertical.draw(startX, startY);
+					startY-=70;
+					aY-=1;
+					if(location[aX][aY] == rightDown){
+						break;
+					}
+				}
 			}
 		}
 		else if(direction ==2){
