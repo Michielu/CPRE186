@@ -48,7 +48,7 @@ public class Easy1 extends BasicGameState{
 		mouse = "Mouse Position x: " + xPos + " y: " + yPos;
 		Input input = gc.getInput();
 		//Go to Menu state
-		if((xPos>890 && xPos<1074) && (yPos<720 && yPos > 655)){
+		if((xPos>279 && xPos<311) && (yPos<720 && yPos > 655)){
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
@@ -57,6 +57,18 @@ public class Easy1 extends BasicGameState{
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
 			if(input.isMouseButtonDown(0)){
 				shoot = true;
+			}
+		}
+		
+		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(10);
+			}
+		}
+		
+		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
+			if(input.isMouseButtonDown(0)){
+				sbg.enterState(12);
 			}
 		}
 	}
