@@ -33,9 +33,21 @@ public class Easy2 extends BasicGameState{
 			}
 		}
 		
+		if(!input.isMouseButtonDown(0)){
+			Play.canContinue=true;
+		}
+		
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
-			if(input.isMouseButtonDown(0)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
 				sbg.enterState(11);
+			}
+		}
+		
+		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
+				sbg.enterState(13);
 			}
 		}
 	}

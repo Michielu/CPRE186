@@ -33,6 +33,25 @@ public class Easy5 extends BasicGameState{
 				sbg.enterState(0);
 			}
 		}
+		
+		if(!input.isMouseButtonDown(0)){
+			Play.canContinue=true;
+		}
+		
+		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
+				sbg.enterState(14);
+			}
+		}
+		
+		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
+				Play.canGoOn = false;
+				sbg.enterState(20);
+			}
+		}
 	}
 	
 	
