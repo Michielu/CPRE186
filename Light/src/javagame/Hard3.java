@@ -36,6 +36,24 @@ public class Hard3 extends BasicGameState{
 				sbg.enterState(0);
 			}
 		}
+		
+		if(!input.isMouseButtonDown(0)){
+			Play.canContinue=true;
+		}
+		
+		if((xPos<312 && xPos>280)&&(yPos>16&&yPos<61)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
+				sbg.enterState(32);
+			}
+		}
+		
+		if((xPos<802 && xPos>771)&&(yPos>16&&yPos<61)){
+			if(Play.canContinue&&(input.isMouseButtonDown(0))){
+				Play.canContinue = false;
+				sbg.enterState(34);
+			}
+		}
 	}
 	
 	
