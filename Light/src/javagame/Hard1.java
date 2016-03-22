@@ -36,6 +36,12 @@ public class Hard1 extends BasicGameState{
 				sbg.enterState(0);
 			}
 		}
+		if((xPos>524 && xPos<556) && (yPos<57 && yPos > 18)){
+			if(input.isMouseButtonDown(0)){
+				Play.canGoOn = false;
+				Methods.blankTiles();
+			}
+		}
 	}
 	
 	
