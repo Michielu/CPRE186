@@ -8,6 +8,7 @@ import org.lwjgl.input.Mouse;
 public class Play extends BasicGameState{
 	public String mouse = "No input yet";
 	public static boolean canGoOn;
+	public static boolean canContinue;
 	Image levelMenus;
 	
 	/*
