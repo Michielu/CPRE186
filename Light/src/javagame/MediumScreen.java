@@ -52,7 +52,7 @@ public class MediumScreen extends BasicGameState{
 		//Go to level 3 state
 		/*if(!input.isMouseButtonDown(0)){
 			Play.canGoOn= true;
-		}//Something went wrong and i commented this part and did some fixes and the problem was solved.*/
+		}//Something went wrong and i commented this part and did some fixes and the problem was solved.go*/
 		if(Play.canGoOn&&(xPos>507 && xPos<575) && (yPos<470 && yPos > 400)){
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
