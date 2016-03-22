@@ -278,53 +278,53 @@ public class Methods extends BasicGameState {
 		mDownLeft.draw(X5, Y4);
 	}	
 	public static void generateMedium1(){
-		endTile.draw(400, 500);
-		startTileUp.draw(260, 570);
-		mDownRight.draw(260, 80);
-		mDownLeft.draw(330, 80);
-		mUpRight.draw(330, 570);
-		mDownLeft.draw(750, 570);
-		mDownRight.draw(750, 500);
+		endTile.draw(X3, Y7);
+		startTileUp.draw(X1, Y8);
+		mDownRight.draw(X1, Y1);
+		mDownLeft.draw(X2, Y1);
+		mUpRight.draw(X2, 570);
+		mDownLeft.draw(X8, Y7);
+		mUpLeft.draw(X8, Y8);
 	}
 	public static void generateMedium2(){
-		endTile.draw(470,80);
-		startTileUp.draw(470, 570);
-		mDownRight.draw(260,80);
-		mDownLeft.draw(750, 80);
-		mUpRight.draw(260,150);
-		mUpLeft.draw(750, 150);
-		mDownRight.draw(260, 500);
-		mDownLeft.draw(750, 500);
-		mUpRight.draw(260,570);
-		mUpLeft.draw(750, 570);
-		mDownRight.draw(540, 80);
-		mUpRight.draw(540, 570);
-		wallTile.draw(470,290);
+		endTile.draw(X4,Y1);
+		startTileUp.draw(X4, Y8);
+		mDownRight.draw(X1,Y1);
+		mDownLeft.draw(X8, Y1);
+		mUpRight.draw(X1,Y2);
+		mUpLeft.draw(X8, Y2);
+		mDownRight.draw(X1, Y7);
+		mDownLeft.draw(X8, Y7);
+		mUpRight.draw(X1,Y8);
+		mUpLeft.draw(X8, Y8);
+		mDownRight.draw(X5, Y1);
+		mUpRight.draw(X5, Y8);
+		wallTile.draw(X4,Y4);
 	}
 	public static void generateMedium3(){
-		endTile.draw(680, 150);
-		startTileUp.draw(750, 80);
-		mDownRight.draw(260, 80);
-		mUpRight.draw(260, 570);
-		mUpLeft.draw(750, 570);
-		mDownLeft.draw(750, 290);
-		mDownRight.draw(470, 290);
-		mUpRight.draw(470, 360);
-		mDownLeft.draw(680, 360);
-		mUpLeft.draw(680, 500);
-		mUpRight.draw(330, 500);
-		mDownRight.draw(330, 150);
+		endTile.draw(X7, Y2);
+		startTileUp.draw(X8, Y1);
+		mDownRight.draw(X1, Y1);
+		mUpRight.draw(X1, Y8);
+		mUpLeft.draw(X8, Y8);
+		mDownLeft.draw(X8, Y4);
+		mDownRight.draw(X4, Y4);
+		mUpRight.draw(X4, Y5);
+		mDownLeft.draw(X7, Y5);
+		mUpLeft.draw(X7, Y7);
+		mUpRight.draw(X2, Y7);
+		mDownRight.draw(X2, Y2);
 		
 	}
 	public static void generateMedium4(){
-		endTile.draw(750, 570);
-		startTileUp.draw(260, 570);
-		mDownRight.draw(260, 80);
-		mDownLeft.draw(330, 80);
-		mUpRight.draw(330, 570);
-		mUpLeft.draw(400, 570);
-		mDownRight.draw(400, 360);
-		mDownRight.draw(X6, Y5);
+		endTile.draw(X8, Y8);
+		startTileUp.draw(X1, Y8);
+		mDownRight.draw(X1, Y1);
+		mDownLeft.draw(X2, Y1);
+		mUpRight.draw(X2, Y8);
+		mUpLeft.draw(X3, Y8);
+		mDownRight.draw(X3, Y5);
+		mDownLeft.draw(X6, Y5);
 		mUpRight.draw(X6, Y8);
 		mUpLeft.draw(X7, Y8);
 		mDownRight.draw(X7, Y1);
