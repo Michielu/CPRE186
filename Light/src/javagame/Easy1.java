@@ -7,6 +7,7 @@ import org.lwjgl.input.Mouse;
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Easy1 extends BasicGameState{
 	public static boolean shoot;
+	public static boolean refresh;
 	Image gameBoard;
 	public static Image tileNormal;
 	public String mouse = "No input yet";
@@ -26,9 +27,16 @@ public class Easy1 extends BasicGameState{
 		g.drawString(mouse, 50, 50);
 		Methods.blankTiles();
 		
+		
 		if(shoot){
 			Methods.shoot();
 		}
+		if(refresh){
+			shoot = false;
+			refresh = false;
+			//Methods.blankTiles();
+		}
+		
 
 //		int xPos = Mouse.getX(); //gets the x position
 //		int yPos = Mouse.getY(); //gets the y position
@@ -69,6 +77,12 @@ public class Easy1 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(input.isMouseButtonDown(0)){
 				sbg.enterState(12);
+			}
+		}
+		if((xPos>524 && xPos<556) && (yPos<57 && yPos > 18)){
+			if(input.isMouseButtonDown(0)){
+				refresh = true;
+				
 			}
 		}
 	}
