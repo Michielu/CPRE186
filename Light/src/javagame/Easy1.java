@@ -37,6 +37,7 @@ public class Easy1 extends BasicGameState{
 			//Methods.blankTiles();
 		}
 		
+		
 
 //		int xPos = Mouse.getX(); //gets the x position
 //		int yPos = Mouse.getY(); //gets the y position
