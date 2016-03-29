@@ -79,6 +79,9 @@ public class Methods extends BasicGameState {
 	
 	public static Image menuButton;
 	
+	public static Image powerOn;
+	public static Image powerOff;
+	
 
 	public Methods(int state){ 
 		
@@ -113,6 +116,8 @@ public class Methods extends BasicGameState {
 		wallTile = new Image("res/tile/walltile(70x70).png");
 		
 		menuButton = new Image("res/buttons/menu_button(167x44).png");
+		powerOn = new Image("res/buttons/power_on(167x44).png");
+		powerOff = new Image("res/buttons/power_on(167x44).png");
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -130,7 +135,20 @@ public class Methods extends BasicGameState {
 		 * arrayY = location[][] y position	 
 		 * 
 		 */
-		shootLight(direction, xStart, yStart, arrayX, arrayY);		
+		if(direction == 0){
+			shootUp(direction, xStart, yStart, arrayX, arrayY);	
+		}
+		if(direction == 1){
+			shootRight(direction, xStart, yStart, arrayX, arrayY);
+		}
+		if(direction == 2){
+			shootDown(direction, xStart, yStart, arrayX, arrayY);
+			
+		}
+		if(direction ==3){
+			shootLeft(direction, xStart, yStart, arrayX, arrayY);
+		}
+			
 	}
 
 	public static void blankTiles() throws SlickException{
@@ -201,7 +219,7 @@ public class Methods extends BasicGameState {
 	}
 	
 	public static void generateEasy1(){
-		menuButton.draw(820, 590);
+		powerOff.draw(820, 590);
 		startTileRight.draw(X1,Y8);
 		xStart =X1;
 		yStart=Y8;
@@ -442,42 +460,40 @@ public class Methods extends BasicGameState {
 		mDownRight.draw(X3,Y3);
 		//TODO add distracting mirrors and walls
 	}
-	public static void shootLight(int direction, int startX, int startY, int aX, int aY){
-		//beamVertical.draw(startX,startY);
-		if(direction == 0){
-			
-		}
-		else if(direction ==1){
-			startLightRight.draw(startX,startY);
+	public static void shootUp(int direction, int startX, int startY, int aX, int aY){
+
+	}
+	public static void shootRight(int direction, int startX, int startY, int aX, int aY){
+		startLightRight.draw(startX,startY);
+		startX+=70;
+		while(aX<8){
+			beamHorizontal.draw(startX, startY);
 			startX+=70;
-			while(aX<8){
-				beamHorizontal.draw(startX, startY);
-				startX+=70;
-				aX+=1;
-				if(location[aX][aY]==leftUp){
-					startX -= 70;
-					direction = UP;
+			aX+=1;
+			if(location[aX][aY]==leftUp){
+				startX -= 70;
+				direction = UP;
+				break;
+			}
+		}
+		if(location[aX][aY] == leftUp){
+			mUpLeftLight.draw(startX,startY);
+			startY-=70;
+			while(aY>0 && aY <= 8){
+				beamVertical.draw(startX, startY);
+				startY-=70;
+				aY-=1;
+				if(location[aX][aY] == rightDown){
 					break;
 				}
 			}
-			if(location[aX][aY] == leftUp){
-				mUpLeftLight.draw(startX,startY);
-				startY-=70;
-				while(aY>0 && aY <= 8){
-					beamVertical.draw(startX, startY);
-					startY-=70;
-					aY-=1;
-					if(location[aX][aY] == rightDown){
-						break;
-					}
-				}
-			}
 		}
-		else if(direction ==2){
-			
-		}
-		else if(direction ==3){
-			
-		}
+		
+	}
+	public static void shootDown(int direction, int startX, int startY, int aX, int aY){
+		
+	}
+	public static void shootLeft(int direction, int startX, int startY, int aX, int aY){
+		
 	}
 }
