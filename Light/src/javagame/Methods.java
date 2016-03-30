@@ -6,6 +6,8 @@ import org.lwjgl.input.Mouse;
 
 
 public class Methods extends BasicGameState {
+	public static boolean startLight ; 
+	
 	public static int xStart = 260;
 	public static int yStart = 80;
 	public static int arrayX;
@@ -16,6 +18,10 @@ public class Methods extends BasicGameState {
 	public static int leftDown = 20;
 	public static int rightUp = 30;
 	public static int rightDown = 40;
+	public static int wall = 50;
+	public static int vertLight = 51;
+	public static int horizLight = 52;
+	
 	
 	public static int X1 = 260;
 	public static int X2 = 330;
@@ -39,7 +45,7 @@ public class Methods extends BasicGameState {
 	public static int DOWN = 2;
 	public static int LEFT =3;
 	public static int direction; 
-	public static int[][] location = new int[9][9] ;
+	public static int[][] location = new int[10][10] ;
 	
 	
 	
@@ -218,9 +224,11 @@ public class Methods extends BasicGameState {
 		return 100;
 	}
 	
-	public static void generateEasy1(){
+	public static void generateEasy1(){ //TODO just for a marker for shooting light
 		powerOff.draw(820, 590);
 		startTileRight.draw(X1,Y8);
+		startLight = true;
+		
 		xStart =X1;
 		yStart=Y8;
 		arrayX = 1;
@@ -240,17 +248,41 @@ public class Methods extends BasicGameState {
 		location[7][1] = rightDown;
 		
 		mDownRight.draw(X1,Y5);
+		location[1][5] = rightDown;
+		
 		mUpLeft.draw(X8, Y5);
+		location[8][5] = leftUp;
 	}
 	public static void generateEasy2(){
+		powerOff.draw(820, 590);
+		
+		
 		startTileUp.draw(X3, Y8);
+		startLight = true;
+		
+		xStart =X3;
+		yStart=Y8;
+		arrayX = 3;
+		arrayY =8;
 		direction = 0;
+		
 		endTile.draw(X6, Y2);
+		location[6][2] = target;
+		
 		mDownRight.draw(X3, Y1);
+		location[3][1] = rightDown;
+		
 		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
+		
 		mUpLeft.draw(X8, Y7);
+		location[8][7] = leftUp;
+		
 		mUpRight.draw(X2, Y7);
+		location[2][7] = rightUp;
+		
 		mDownRight.draw(X2, Y2);
+		location[2][2] = rightDown;
 		
 	}
 	public static void generateEasy3(){
@@ -461,39 +493,171 @@ public class Methods extends BasicGameState {
 		//TODO add distracting mirrors and walls
 	}
 	public static void shootUp(int direction, int startX, int startY, int aX, int aY){
-
-	}
-	public static void shootRight(int direction, int startX, int startY, int aX, int aY){
-		startLightRight.draw(startX,startY);
-		startX+=70;
-		while(aX<8){
-			beamHorizontal.draw(startX, startY);
-			startX+=70;
-			aX+=1;
-			if(location[aX][aY]==leftUp){
-				startX -= 70;
-				direction = UP;
+		if(startLight){
+			//aX -=1;
+			startLightUp.draw(startX,startY);
+			startLight = false;
+			startY-=70;
+			aY-=1;
+		}
+		while(aY>0){
+			if(location[aX][aY]==leftDown){
+				mDownLeftLight.draw(startX,startY);
+				shootLeft(LEFT, startX-70, startY, aX-1, aY);
 				break;
 			}
-		}
-		if(location[aX][aY] == leftUp){
-			mUpLeftLight.draw(startX,startY);
-			startY-=70;
-			while(aY>0 && aY <= 8){
-				beamVertical.draw(startX, startY);
-				startY-=70;
-				aY-=1;
-				if(location[aX][aY] == rightDown){
-					break;
-				}
+			else if(location[aX][aY]== rightDown){
+				mDownRightLight.draw(startX,startY);
+				shootRight(RIGHT, startX+70, startY, aX+1, aY);
+				break;
 			}
+			else if(location[aX][aY]== wall){
+				return;
+			}
+			else if(location[aX][aY]== target){
+				endLightDown.draw(startX, startY);
+				break;
+			}
+			else if(location[aX][aY] == horizLight){
+				beamCross.draw(startX, startY);
+			}
+			else{
+				beamVertical.draw(startX, startY);
+				location[aX][aY] = vertLight;
+			}
+
+			startY-=70;
+			aY-=1;
+			
+		}
+		
+	}
+	public static void shootRight(int direction, int startX, int startY, int aX, int aY){
+		//If this is the first move
+		//
+		if(startLight){
+			//aX -=1;
+			startLightRight.draw(startX,startY);
+			startLight = false;
+			startX+=70;
+			aX+=1;
+		}
+		
+		
+		while(aX<9){
+			if(location[aX][aY]==leftUp){
+				mUpLeftLight.draw(startX,startY);
+				shootUp(UP, startX, startY-70, aX, aY-1);
+				break;
+			}
+			else if(location[aX][aY]== leftDown){
+				mDownLeftLight.draw(startX, startY);
+				shootDown(DOWN,startX, startY+70, aX,aY+1);
+				
+				break;
+			}
+			else if(location[aX][aY]== wall){
+				//TODO wall stuffffff
+				return;
+			}
+			else if(location[aX][aY]== target){
+				endLightLeft.draw(startX, startY);
+				break;
+				//LEVEL COMPLETED!
+			}
+			else if(location[aX][aY] == vertLight){
+				beamCross.draw(startX, startY);
+			}
+			else{
+				beamHorizontal.draw(startX, startY);
+				location[aX][aY] = horizLight;
+			}
+			
+			startX+=70;
+			aX+=1;
+			
 		}
 		
 	}
 	public static void shootDown(int direction, int startX, int startY, int aX, int aY){
-		
+		if(startLight){
+			//aX -=1;
+			startLightDown.draw(startX,startY);
+			startLight = false;
+			startY+=70;
+			aY+=1;
+		}
+		while(aY<9){
+			if(location[aX][aY]==leftUp){
+				mUpLeftLight.draw(startX,startY);
+				shootLeft(LEFT, startX-70, startY, aX-1, aY);
+				break;
+			}
+			else if(location[aX][aY]== rightUp){
+				mUpRightLight.draw(startX,startY);
+				shootRight(RIGHT, startX+70, startY, aX+1, aY);
+				break;
+			}
+			else if(location[aX][aY]== wall){
+				return;
+			}
+			else if(location[aX][aY]== target){
+				endLightUp.draw(startX, startY);
+				break;
+			}
+			else if(location[aX][aY] == horizLight){
+				beamCross.draw(startX, startY);
+			}
+			else{
+				beamVertical.draw(startX, startY);
+				location[aX][aY] = vertLight;
+			}
+
+			startY+=70;
+			aY+=1;
+			
+		}
 	}
 	public static void shootLeft(int direction, int startX, int startY, int aX, int aY){
-		
+		if(startLight){
+			//aX -=1;
+			startLightLeft.draw(startX,startY);
+			startLight = false;
+			startY-=70;
+			aY-=1;
+		}
+		while(aX>0){
+			if(location[aX][aY]==rightUp){
+				mUpRightLight.draw(startX,startY);
+				shootUp(UP, startX, startY-70, aX, aY-1);
+				break;
+			}
+			else if(location[aX][aY]== rightDown){
+				mDownRightLight.draw(startX, startY);
+				shootDown(DOWN,startX, startY+70, aX,aY+1);
+				
+				break;
+			}
+			else if(location[aX][aY]== wall){
+				//TODO wall stuffffff
+				return;
+			}
+			else if(location[aX][aY]== target){
+				endLightRight.draw(startX, startY);
+				//LEVEL COMPLETED!
+				break;
+			}
+			else if(location[aX][aY] == vertLight){
+				beamCross.draw(startX, startY);
+			}
+			else{
+				beamHorizontal.draw(startX, startY);
+				location[aX][aY] = horizLight;
+			}
+			
+			startX-=70;
+			aX-=1;
+			
+		}
 	}
 }
