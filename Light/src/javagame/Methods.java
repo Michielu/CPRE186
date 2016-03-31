@@ -225,6 +225,7 @@ public class Methods extends BasicGameState {
 	}
 	
 	public static void generateEasy1(){ //TODO just for a marker for shooting light
+		clearArray();
 		powerOff.draw(820, 590);
 		startTileRight.draw(X1,Y8);
 		startLight = true;
@@ -254,6 +255,7 @@ public class Methods extends BasicGameState {
 		location[8][5] = leftUp;
 	}
 	public static void generateEasy2(){
+		clearArray();
 		powerOff.draw(820, 590);
 		
 		
@@ -286,48 +288,108 @@ public class Methods extends BasicGameState {
 		
 	}
 	public static void generateEasy3(){
+		clearArray();
 		startTileUp.draw(X3,Y8);
+		powerOff.draw(820, 590);
+		startLight= true;
 		direction = 0;
+		
+		xStart =X3;
+		yStart=Y8;
+		arrayX = 3;
+		arrayY =8;
+		
+		
 		endTile.draw(X5, Y1);
+		location[5][1] = target;
 		mDownRight.draw(X3, Y6);
+		location[3][6] = rightDown;
 		mDownLeft.draw(X5, Y6);
+		location[5][6] = leftDown;
 		mUpRight.draw(X5, Y8);
+		location[5][8] = rightUp;
 		mUpLeft.draw(X8, Y8);
+		location[8][8] = leftUp;
 		mDownLeft.draw(X8, Y4);
+		location[8][4]=leftDown;
 		mUpRight.draw(X5, Y4);
+		location[5][4] = rightUp;
 	}
 	public static void generateEasy4(){
+		clearArray();
+		powerOff.draw(820, 590);
+		startLight = true;
 		startTileRight.draw(X3, Y5);
+		
+		xStart =X3;
+		yStart=Y5;
+		arrayX = 3;
+		arrayY =5;
+		
 		direction = 1;
 		endTile.draw(X6, Y4);
+		location[6][4] = target;
 		mDownLeft.draw(X7, Y5);
+		location[7][5] = leftDown;
 		mUpLeft.draw(X7, Y7);
+		location[7][7]=leftUp;
 		mDownRight.draw(X3, Y7);
+		location[3][7] = rightDown;
 		mUpRight.draw(X3, Y8);
+		location[3][8] = rightUp;
 		mUpLeft.draw(X8, Y8);
+		location[8][8] = leftUp;
 		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
 		mDownRight.draw(X6, Y1);
+		location[6][1] = rightDown;
 	}
 	public static void generateEasy5(){
+		clearArray();
+		powerOff.draw(820, 590);
 		startTileRight.draw(X1, Y8);
+		startLight = true;
+		
+		xStart =X1;
+		yStart=Y8;
+		arrayX = 1;
+		arrayY =8;
+		
 		direction = 1;
 		endTile.draw(X4, Y4);
+		location[4][4] = target;
 		mUpLeft.draw(X8, Y8);
+		location[8][8] = leftUp;
 		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
 		mDownRight.draw(X1, Y1);
+		location[1][1] = rightDown;
 		mUpRight.draw(X1, Y7);
+		location[1][7] = rightUp;
 		mUpLeft.draw(X7, Y7);
+		location[7][7] = leftUp;
 		mDownLeft.draw(X7, Y2);
+		location[7][2] =leftDown;
 		mDownRight.draw(X2, Y2);
+		location[2][2] = rightDown;
 		mUpRight.draw(X2, Y6);
+		location[2][6]=rightUp;
 		mUpLeft.draw(X6, Y6);
+		location[6][6] = leftUp;
 		mDownLeft.draw(X6, Y3);
+		location[6][3] = leftDown;
 		mDownRight.draw(X3, Y3);
+		location[3][3]=rightDown;
 		mUpRight.draw(X3, Y5);
+		location[3][5] = rightUp;
 		mUpLeft.draw(X5,Y5);
+		location[5][5] = leftUp;
 		mDownLeft.draw(X5, Y4);
+		location[5][4] = leftDown;
 	}	
 	public static void generateMedium1(){
+		clearArray();
+		powerOff.draw(820, 590);
 		endTile.draw(X3, Y7);
 		startTileUp.draw(X1, Y8);
 		mDownRight.draw(X1, Y1);
@@ -337,6 +399,9 @@ public class Methods extends BasicGameState {
 		mUpLeft.draw(X8, Y8);
 	}
 	public static void generateMedium2(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		endTile.draw(X4,Y1);
 		startTileUp.draw(X4, Y8);
 		mDownRight.draw(X1,Y1);
@@ -352,6 +417,9 @@ public class Methods extends BasicGameState {
 		wallTile.draw(X4,Y4);
 	}
 	public static void generateMedium3(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		endTile.draw(X7, Y2);
 		startTileUp.draw(X8, Y1);
 		mDownRight.draw(X1, Y1);
@@ -367,6 +435,9 @@ public class Methods extends BasicGameState {
 		
 	}
 	public static void generateMedium4(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		endTile.draw(X8, Y8);
 		startTileUp.draw(X1, Y8);
 		mDownRight.draw(X1, Y1);
@@ -382,7 +453,9 @@ public class Methods extends BasicGameState {
 		
 	}
 	public static void generateMedium5(){
-
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		endTile.draw(X2, Y2);
 		startTileUp.draw(X1, Y1);
 		mDownRight.draw(X8, Y1);
@@ -393,6 +466,9 @@ public class Methods extends BasicGameState {
 		mDownLeft.draw(X4, Y2);
 	}
 	public static void generateHard1(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		startTileUp.draw(X3, Y8);
 		endTile.draw(X7, Y1);
 		mUpRight.draw(X2, Y8);
@@ -413,6 +489,9 @@ public class Methods extends BasicGameState {
 		mDownLeft.draw(X8, Y5);
 	}
 	public static void generateHard2(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		startTileUp.draw(X6, Y3);
 		endTile.draw(X1, Y7);
 		mUpRight.draw(X6, Y5);
@@ -435,6 +514,9 @@ public class Methods extends BasicGameState {
 		//TODO add distracting mirrors
 	}
 	public static void generateHard3(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		startTileDown.draw(X1, Y1);
 		endTile.draw(X8, Y1);
 		mUpRight.draw(X1, Y8);
@@ -457,6 +539,9 @@ public class Methods extends BasicGameState {
 		
 	}
 	public static void generateHard4(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		startTileUp.draw(X4, Y4);
 		endTile.draw(X5, Y5);
 		mUpRight.draw(X4, Y6);
@@ -475,6 +560,9 @@ public class Methods extends BasicGameState {
 		//TODO add distracting mirrors and walls
 	}
 	public static void generateHard5(){
+		clearArray();
+		powerOff.draw(820, 590);
+		
 		startTileUp.draw(X2, Y5);
 		endTile.draw(X7, Y3);
 		mDownRight.draw(X2, Y4);
@@ -492,6 +580,17 @@ public class Methods extends BasicGameState {
 		mDownRight.draw(X3,Y3);
 		//TODO add distracting mirrors and walls
 	}
+	//Clear all the mirrors from the array
+	public static void clearArray (){
+		int rows = location.length;
+		int col = location[0].length;
+		for(int i =0; i<rows;i++){
+			for(int j= 0; j<col;j++){
+				location[i][j] = 0;
+			}
+		}
+	}
+	
 	public static void shootUp(int direction, int startX, int startY, int aX, int aY){
 		if(startLight){
 			//aX -=1;

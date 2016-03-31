@@ -6,6 +6,8 @@ import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Easy5 extends BasicGameState{
+	public static boolean shoot;
+	public static boolean refresh;
 	Image gameBoard;
 
 	public Easy5(int state){ 
@@ -20,6 +22,15 @@ public class Easy5 extends BasicGameState{
 		Methods.currentStateNum = 15;
 		gameBoard.draw(0,0);
 		Methods.blankTiles();
+		
+		if(shoot){
+			Methods.shoot();
+		}
+		if(refresh){
+			shoot = false;
+			refresh = false;
+		}
+		
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
@@ -31,6 +42,11 @@ public class Easy5 extends BasicGameState{
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
+			}
+		}
+		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
+			if(input.isMouseButtonDown(0)){
+				shoot = true;
 			}
 		}
 		

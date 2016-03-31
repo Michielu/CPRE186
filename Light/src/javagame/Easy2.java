@@ -28,7 +28,6 @@ public class Easy2 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
-			//Methods.blankTiles();
 		}
 		
 	}
