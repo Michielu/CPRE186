@@ -6,6 +6,8 @@ import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
 public class Medium2 extends BasicGameState{
+	public static boolean shoot;
+	public static boolean refresh;
 	Image gameBoard;
 	public String mouse = "No input yet";
 	public Medium2(int state){ 
@@ -21,6 +23,15 @@ public class Medium2 extends BasicGameState{
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
 		Methods.blankTiles();
+		
+		if(shoot){
+			Methods.shoot();
+		}
+		if(refresh){
+			shoot = false;
+			refresh = false;
+			//Methods.blankTiles();
+		}
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
@@ -33,6 +44,11 @@ public class Medium2 extends BasicGameState{
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
+			}
+		}
+		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
+			if(input.isMouseButtonDown(0)){
+				shoot = true;
 			}
 		}
 		
@@ -52,6 +68,13 @@ public class Medium2 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				sbg.enterState(23);
+			}
+		}
+		
+		if((xPos>524 && xPos<556) && (yPos<57 && yPos > 18)){
+			if(input.isMouseButtonDown(0)){
+				refresh = true;
+				
 			}
 		}
 	}

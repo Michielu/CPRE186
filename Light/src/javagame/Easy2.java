@@ -66,6 +66,13 @@ public class Easy2 extends BasicGameState{
 				sbg.enterState(13);
 			}
 		}
+		
+		if((xPos>524 && xPos<556) && (yPos<57 && yPos > 18)){
+			if(input.isMouseButtonDown(0)){
+				refresh = true;
+				
+			}
+		}
 	}
 	
 	

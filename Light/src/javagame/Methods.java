@@ -390,86 +390,184 @@ public class Methods extends BasicGameState {
 	public static void generateMedium1(){
 		clearArray();
 		powerOff.draw(820, 590);
-		endTile.draw(X3, Y7);
 		startTileUp.draw(X1, Y8);
+		startLight = true;
+		
+		direction = 0;
+		xStart =X1;
+		yStart=Y8;
+		arrayX = 1;
+		arrayY =8;
+		
+		endTile.draw(X3, Y7);
+		location [3][7] = target;
+
 		mDownRight.draw(X1, Y1);
+		location[1][1] = rightDown;
 		mDownLeft.draw(X2, Y1);
-		mUpRight.draw(X2, 570);
-		mDownLeft.draw(X8, Y7);
+		location[2][1] = leftDown;
+		mUpRight.draw(X2, Y8);
+		location[2][8] = rightUp;
 		mUpLeft.draw(X8, Y8);
+		location[8][8] = leftUp;
+		mDownLeft.draw(X8, Y7);
+		location[8][7] = leftDown;
+
 	}
 	public static void generateMedium2(){
 		clearArray();
 		powerOff.draw(820, 590);
+		startTileLeft.draw(X4, Y8);
+		startLight = true;
+		
+		direction = 3;
+		xStart =X4;
+		yStart=Y8;
+		arrayX = 4;
+		arrayY =8;
 		
 		endTile.draw(X4,Y1);
-		startTileUp.draw(X4, Y8);
-		mDownRight.draw(X1,Y1);
-		mDownLeft.draw(X8, Y1);
-		mUpRight.draw(X1,Y2);
-		mUpLeft.draw(X8, Y2);
-		mDownRight.draw(X1, Y7);
-		mDownLeft.draw(X8, Y7);
+		location[4][1] = target;
 		mUpRight.draw(X1,Y8);
+		location[1][8] = rightUp;
+		mDownRight.draw(X1, Y7);
+		location[1][7] = rightDown;
+		mDownLeft.draw(X8, Y7);
+		location[8][7] = leftDown;
 		mUpLeft.draw(X8, Y8);
-		mDownRight.draw(X5, Y1);
+		location[8][8] = leftUp;
 		mUpRight.draw(X5, Y8);
+		location[5][8] = rightUp;
+		mDownRight.draw(X5, Y1);
+		location[5][1] = rightDown;
+		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
+		mUpLeft.draw(X8, Y2);
+		location[8][2] = leftUp;
+		mUpRight.draw(X1,Y2);
+		location[1][2] = rightUp;
+		mDownRight.draw(X1,Y1);
+		location[1][1] = rightDown;
+
 		wallTile.draw(X4,Y4);
+		location[4][4] = wall;
 	}
 	public static void generateMedium3(){
 		clearArray();
 		powerOff.draw(820, 590);
 		
+		startLight = true;
+		startTileLeft.draw(X8, Y1);
+		direction = 3;
+		xStart =X8;
+		yStart=Y1;
+		arrayX = 8;
+		arrayY =1;
+		
+		
 		endTile.draw(X7, Y2);
-		startTileUp.draw(X8, Y1);
+		location[7][2] = target;
 		mDownRight.draw(X1, Y1);
+		location[1][1] = rightDown;
 		mUpRight.draw(X1, Y8);
+		location[1][8] = rightUp;
 		mUpLeft.draw(X8, Y8);
+		location[8][8] = leftUp;
 		mDownLeft.draw(X8, Y4);
+		location[8][4] = leftDown;
 		mDownRight.draw(X4, Y4);
+		location[4][4] = rightDown;
 		mUpRight.draw(X4, Y5);
+		location[4][5] = rightUp;
 		mDownLeft.draw(X7, Y5);
+		location[7][5] = leftDown;
 		mUpLeft.draw(X7, Y7);
+		location[7][7] = leftUp;
 		mUpRight.draw(X2, Y7);
+		location[2][7] = rightUp;
 		mDownRight.draw(X2, Y2);
+		location[2][2] = rightDown;
 		
 	}
 	public static void generateMedium4(){
 		clearArray();
 		powerOff.draw(820, 590);
+		startTileUp.draw(X1, Y8);
+		direction = 0;
+		startLight = true;
+
+		xStart =X1;
+		yStart=Y8;
+		arrayX = 1;
+		arrayY =8;
+		
 		
 		endTile.draw(X8, Y8);
-		startTileUp.draw(X1, Y8);
+		location[8][8] = target;
 		mDownRight.draw(X1, Y1);
+		location[1][1] = rightDown;
 		mDownLeft.draw(X2, Y1);
+		location[2][1] = leftDown;
 		mUpRight.draw(X2, Y8);
+		location[2][8] = rightUp;
 		mUpLeft.draw(X3, Y8);
+		location[3][8] = leftUp;
 		mDownRight.draw(X3, Y5);
+		location[3][5] = rightDown;
 		mDownLeft.draw(X6, Y5);
+		location[6][5] = leftDown;
 		mUpRight.draw(X6, Y8);
+		location[6][8] = rightUp;
 		mUpLeft.draw(X7, Y8);
+		location[7][8] = leftUp;
 		mDownRight.draw(X7, Y1);
+		location[7][1] = rightDown;
 		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
 		
 	}
 	public static void generateMedium5(){
 		clearArray();
 		powerOff.draw(820, 590);
+		startTileRight.draw(X1, Y1);
+		startLight = true;
+		direction = 1;
+		
+		xStart =X1;
+		yStart=Y1;
+		arrayX = 1;
+		arrayY =1;
 		
 		endTile.draw(X2, Y2);
-		startTileUp.draw(X1, Y1);
-		mDownRight.draw(X8, Y1);
+		location[2][2] = target;
+		mDownLeft.draw(X8, Y1);
+		location[8][1] = leftDown;
 		mUpLeft.draw(X8, Y2);
+		location[8][2] = leftUp;
 		mDownRight.draw(X5, Y2);
+		location[5][2] = rightDown;
 		mUpLeft.draw(X5, Y8);
+		location[5][8] = leftUp;
 		mUpRight.draw(X4, Y8);
+		location[4][8] = rightUp;
 		mDownLeft.draw(X4, Y2);
+		location[4][2] = leftDown;
 	}
+	
 	public static void generateHard1(){
 		clearArray();
 		powerOff.draw(820, 590);
-		
 		startTileUp.draw(X3, Y8);
+		startLight = true;
+		
+		direction = 3;
+
+		xStart =X3;
+		yStart=Y8;
+		arrayX = 3;
+		arrayY =8;
+		
+
 		endTile.draw(X7, Y1);
 		mUpRight.draw(X2, Y8);
 		mDownRight.draw(X2, Y6);
@@ -491,8 +589,17 @@ public class Methods extends BasicGameState {
 	public static void generateHard2(){
 		clearArray();
 		powerOff.draw(820, 590);
-		
 		startTileUp.draw(X6, Y3);
+		startLight = true;
+
+		direction =2;
+		
+		xStart =X6;
+		yStart=Y3;
+		arrayX = 6;
+		arrayY =3;
+		
+
 		endTile.draw(X1, Y7);
 		mUpRight.draw(X6, Y5);
 		mUpLeft.draw(X8, Y5);
@@ -516,8 +623,17 @@ public class Methods extends BasicGameState {
 	public static void generateHard3(){
 		clearArray();
 		powerOff.draw(820, 590);
-		
 		startTileDown.draw(X1, Y1);
+		startLight = true;
+		
+		direction = 2;
+
+		xStart =X1;
+		yStart=Y1;
+		arrayX = 1;
+		arrayY =1;
+		
+
 		endTile.draw(X8, Y1);
 		mUpRight.draw(X1, Y8);
 		mUpLeft.draw(X2, Y8);
@@ -541,8 +657,16 @@ public class Methods extends BasicGameState {
 	public static void generateHard4(){
 		clearArray();
 		powerOff.draw(820, 590);
-		
 		startTileUp.draw(X4, Y4);
+		startLight = true;
+		direction = 2;
+
+		xStart =X4;
+		yStart=Y4;
+		arrayX = 4;
+		arrayY =4;
+		
+
 		endTile.draw(X5, Y5);
 		mUpRight.draw(X4, Y6);
 		mUpLeft.draw(X6, Y6);
@@ -562,8 +686,16 @@ public class Methods extends BasicGameState {
 	public static void generateHard5(){
 		clearArray();
 		powerOff.draw(820, 590);
-		
 		startTileUp.draw(X2, Y5);
+		startLight = true;
+		direction = 0;
+
+		xStart =X2;
+		yStart=Y5;
+		arrayX = 2;
+		arrayY =5;
+		
+
 		endTile.draw(X7, Y3);
 		mDownRight.draw(X2, Y4);
 		mDownLeft.draw(X4, Y4);
@@ -610,7 +742,7 @@ public class Methods extends BasicGameState {
 				shootRight(RIGHT, startX+70, startY, aX+1, aY);
 				break;
 			}
-			else if(location[aX][aY]== wall){
+			else if(location[aX][aY]== wall){ // Don't need this? bc of location == 0 one?
 				return;
 			}
 			else if(location[aX][aY]== target){
@@ -620,7 +752,7 @@ public class Methods extends BasicGameState {
 			else if(location[aX][aY] == horizLight){
 				beamCross.draw(startX, startY);
 			}
-			else{
+			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
 				location[aX][aY] = vertLight;
 			}
@@ -667,7 +799,7 @@ public class Methods extends BasicGameState {
 			else if(location[aX][aY] == vertLight){
 				beamCross.draw(startX, startY);
 			}
-			else{
+			else if(location[aX][aY] == 0){
 				beamHorizontal.draw(startX, startY);
 				location[aX][aY] = horizLight;
 			}
@@ -707,7 +839,7 @@ public class Methods extends BasicGameState {
 			else if(location[aX][aY] == horizLight){
 				beamCross.draw(startX, startY);
 			}
-			else{
+			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
 				location[aX][aY] = vertLight;
 			}
@@ -719,11 +851,10 @@ public class Methods extends BasicGameState {
 	}
 	public static void shootLeft(int direction, int startX, int startY, int aX, int aY){
 		if(startLight){
-			//aX -=1;
 			startLightLeft.draw(startX,startY);
 			startLight = false;
-			startY-=70;
-			aY-=1;
+			startX-=70;
+			aX-=1;
 		}
 		while(aX>0){
 			if(location[aX][aY]==rightUp){
@@ -749,7 +880,7 @@ public class Methods extends BasicGameState {
 			else if(location[aX][aY] == vertLight){
 				beamCross.draw(startX, startY);
 			}
-			else{
+			else if(location[aX][aY] == 0){
 				beamHorizontal.draw(startX, startY);
 				location[aX][aY] = horizLight;
 			}
