@@ -5,7 +5,9 @@ import org.newdawn.slick.state.*;
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
-public class Hard5 extends BasicGameState{
+public class Hard5 extends BasicGameState{	
+	public static boolean shoot;
+	public static boolean refresh;
 	Image gameBoard;
 	public String mouse = "No input yet";
 
@@ -22,6 +24,14 @@ public class Hard5 extends BasicGameState{
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
 		Methods.blankTiles();
+		
+		if(shoot){
+			Methods.shoot();
+		}
+		if(refresh){
+			shoot = false;
+			refresh = false;
+		}
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
@@ -36,7 +46,11 @@ public class Hard5 extends BasicGameState{
 				sbg.enterState(0);
 			}
 		}
-		
+		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
+			if(input.isMouseButtonDown(0)){
+				shoot = true;
+			}
+		}
 		if(!input.isMouseButtonDown(0)){
 			Play.canContinue=true;
 		}
@@ -53,6 +67,12 @@ public class Hard5 extends BasicGameState{
 				Play.canContinue = false;
 				Play.canGoOn = false;
 				sbg.enterState(0); //TODO Change this to a high score page or a page to show the user has finished
+			}
+		}
+		if((xPos>524 && xPos<556) && (yPos<57 && yPos > 18)){
+			if(input.isMouseButtonDown(0)){
+				refresh = true;
+				
 			}
 		}
 	}
