@@ -30,6 +30,7 @@ public class Easy1 extends BasicGameState{
 		
 		if(shoot){
 			Methods.shoot();
+			
 		}
 		if(refresh){
 			shoot = false;

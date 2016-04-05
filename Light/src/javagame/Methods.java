@@ -87,6 +87,7 @@ public class Methods extends BasicGameState {
 	
 	public static Image powerOn;
 	public static Image powerOff;
+	public static Image levelComplete;
 	
 
 	public Methods(int state){ 
@@ -123,7 +124,8 @@ public class Methods extends BasicGameState {
 		
 		menuButton = new Image("res/buttons/menu_button(167x44).png");
 		powerOn = new Image("res/buttons/power_on(167x44).png");
-		powerOff = new Image("res/buttons/power_on(167x44).png");
+		powerOff = new Image("res/buttons/power_off(167x44).png");
+		levelComplete = new Image ("res/buttons/level_complete(1080x720).png");
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -141,6 +143,8 @@ public class Methods extends BasicGameState {
 		 * arrayY = location[][] y position	 
 		 * 
 		 */
+		
+		powerOn.draw(820, 590);
 		if(direction == 0){
 			shootUp(direction, xStart, yStart, arrayX, arrayY);	
 		}
@@ -838,6 +842,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY]== target){
 				endLightDown.draw(startX, startY);
+				levelComplete.draw(0, 0);
 				break;
 			}
 			else if(location[aX][aY] == horizLight){
@@ -884,6 +889,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY]== target){
 				endLightLeft.draw(startX, startY);
+				levelComplete.draw(0, 0);
 				break;
 				//LEVEL COMPLETED!
 			}
@@ -925,6 +931,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY]== target){
 				endLightUp.draw(startX, startY);
+				levelComplete.draw(0, 0);
 				break;
 			}
 			else if(location[aX][aY] == horizLight){
@@ -965,6 +972,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY]== target){
 				endLightRight.draw(startX, startY);
+				levelComplete.draw(0, 0);
 				//LEVEL COMPLETED!
 				break;
 			}
