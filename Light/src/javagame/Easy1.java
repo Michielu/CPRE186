@@ -8,6 +8,8 @@ import org.lwjgl.input.Mouse;
 public class Easy1 extends BasicGameState{
 	public static boolean shoot;
 	public static boolean refresh;
+	public static boolean rotate;
+	public static boolean blankTileOnce = true;
 	Image gameBoard;
 	public static Image tileNormal;
 	public String mouse = "No input yet";
@@ -25,7 +27,11 @@ public class Easy1 extends BasicGameState{
 		Methods.currentStateNum = 11;
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
-		Methods.blankTiles();
+		//if(blankTileOnce){
+			Methods.blankTiles();
+			//blankTileOnce = false;
+		//}
+		
 		
 		
 		if(shoot){
@@ -35,6 +41,32 @@ public class Easy1 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
+		}
+		if(rotate){
+			
+			Methods.finished = false;
+					
+//					if(Methods.location[7][8] == Methods.leftUp&& !Methods.finished){
+//						Methods.location[7][8] = Methods.rightUp;
+//						//System.out.println(location[x][y]);
+//						//mUpRight.draw(aX-70, aY-70);
+//						//Methods.finished = true;
+//						
+//					}
+//					 if(Methods.location[7][8]==Methods.rightUp&& !Methods.finished){
+//						Methods.location[7][8] = Methods.rightDown;
+//						//Methods.finished = true;
+//						
+//					}
+//					 if(Methods.location[7][8]==Methods.rightDown && !Methods.finished){
+//						Methods.location[7][8] = Methods.leftDown;
+//						//Methods.finished = true;
+//					}
+//					 if(Methods.location[7][8]==Methods.leftDown && !Methods.finished){
+//						Methods.location[7][8] = Methods.leftUp;
+//						//Methods.finished = true;
+//					}
+			Methods.rotate(7,8,680,570);
 		}
 		
 		
@@ -61,6 +93,13 @@ public class Easy1 extends BasicGameState{
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
+			}
+		}
+		if((xPos>682 && xPos<746)&&(yPos>83 && yPos<145)){
+			if(input.isMouseButtonDown(0)){
+				
+				rotate = true;
+			
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
@@ -93,6 +132,7 @@ public class Easy1 extends BasicGameState{
 				
 			}
 		}
+
 	}
 	
 	

@@ -6,7 +6,10 @@ import org.lwjgl.input.Mouse;
 
 
 public class Methods extends BasicGameState {
-	public static boolean startLight ; 
+	public static boolean startLight ;
+	//For rotate method
+	 static boolean finished = false;
+	 static boolean changeLocation;
 	
 	public static int xStart = 260;
 	public static int yStart = 80;
@@ -247,6 +250,10 @@ public class Methods extends BasicGameState {
 		
 		mUpLeft.draw(X7, Y8);
 		location[7][8]=leftUp;
+		if(changeLocation){
+			location [7][8] = locationUpdate(location[7][8]);
+		}
+
 		
 		
 		mDownRight.draw(X7,Y1);
@@ -258,6 +265,8 @@ public class Methods extends BasicGameState {
 		mUpLeft.draw(X8, Y5);
 		location[8][5] = leftUp;
 	}
+	
+
 	public static void generateEasy2(){
 		clearArray();
 		powerOff.draw(820, 590);
@@ -817,6 +826,84 @@ public class Methods extends BasicGameState {
 			}
 		}
 	}
+	/**
+	 *TODO READ THIS VICTOR 
+	 *I worked on rotating the mirror specifically on X7,Y8. It didn't work too well. 
+	 *I'm trying to make sure I can make it work before I make a generalizing method. It's dangerous.
+	 *
+	 * The problem with this method is that the refresh method in every level class constantly refreshes 
+	 * 	the location[][] back to the default setting. Why then can I change the mirror? Idk
+	 * This stuff is messed up! 
+	 * I don't really want to change the update thing because if I do, then the refresh button won't work
+	 * Our code is messed up Victor
+	 * 
+	 * So we have to update the location[][] in generateEasy 1 
+	 * and also change the display there as well... huh I'll do that the next time I work on this
+	 * 
+	 * But then that'll mess with the refresh button, maybe have a general generateEasy1 and a changing generateEasy1
+	 * Who know.
+	 * 
+	 * 
+	 * x and y are for location 
+	 * @param x
+	 * @param y
+	 * @param aX
+	 * @param aY
+	 */
+	//TODO rotate mirrors Draws new mirrors but updated value for location[x][y] doesn't stay.
+	public static void rotate(int x, int y, int aX, int aY){
+		
+		if(location[x][y] == leftUp&& !finished){
+			mUpRight.draw(aX, aY);
+			System.out.println(location[x][y]);
+			//location[x][y] = rightUp;
+			//leftUp = rightUp;
+			if(!finished){
+				
+			}
+			System.out.println(location[x][y]);
+			//mUpRight.draw(aX-70, aY-70);
+			finished = true;
+			changeLocation = true;
+			
+		}
+		 if(location[x][y]==rightUp&& !finished){
+			mDownRight.draw(aX, aY);
+			//location[x][y] = rightDown;
+			finished = true;
+			
+		}
+		 if(location[x][y]==rightDown && !finished){
+			mDownLeft.draw(aX, aY);
+			//location[x][y] = leftDown;
+			finished = true;
+		}
+		 if(location[x][y]==leftDown && !finished){
+			mUpLeft.draw(aX, aY);
+			//location[x][y] = leftUp;
+			finished = true;
+		}
+	}
+	/**
+	 * 
+	 * @param i
+	 * @return
+	 */
+	private static int locationUpdate(int i) {
+		if(i == leftUp){
+			return leftDown;
+		}
+		if(i==rightUp){
+			return rightDown;
+		}
+		if(i==rightDown){
+			return leftDown;
+		}
+		if(i==leftDown){
+			return leftUp;
+		}
+		return i;
+	}
 	
 	public static void shootUp(int direction, int startX, int startY, int aX, int aY){
 		if(startLight){
@@ -988,5 +1075,10 @@ public class Methods extends BasicGameState {
 			aX-=1;
 			
 		}
+		
+		
+		
 	}
+
+	
 }
