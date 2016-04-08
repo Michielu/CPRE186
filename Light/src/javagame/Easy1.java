@@ -8,12 +8,20 @@ import org.lwjgl.input.Mouse;
 public class Easy1 extends BasicGameState{
 	public static boolean shoot;
 	public static boolean refresh;
-	public static boolean rotate;
+
 	public static boolean blankTileOnce = true;
 	Image gameBoard;
 	public static Image tileNormal;
 	public String mouse = "No input yet";
 
+	
+	//Created for rotating mirrors thingie
+	public static boolean rotate;
+	public int numRotates =0;
+	public static boolean isButtonUp;
+
+	
+	
 	public Easy1(int state){ 
 		
 	}
@@ -27,10 +35,16 @@ public class Easy1 extends BasicGameState{
 		Methods.currentStateNum = 11;
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
-		//if(blankTileOnce){
-			Methods.blankTiles();
-			//blankTileOnce = false;
-		//}
+		Methods.blankTiles();
+
+			
+			
+		if(numRotates == 0){
+			Methods.generateBoard();
+		}
+		else if(numRotates != 0){
+			Methods.generateBoardRotated();
+		}
 		
 		
 		
@@ -41,32 +55,17 @@ public class Easy1 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
+			//Added this with rotates stuff
+			numRotates = 0;
 		}
 		if(rotate){
 			
-			Methods.finished = false;
-					
-//					if(Methods.location[7][8] == Methods.leftUp&& !Methods.finished){
-//						Methods.location[7][8] = Methods.rightUp;
-//						//System.out.println(location[x][y]);
-//						//mUpRight.draw(aX-70, aY-70);
-//						//Methods.finished = true;
-//						
-//					}
-//					 if(Methods.location[7][8]==Methods.rightUp&& !Methods.finished){
-//						Methods.location[7][8] = Methods.rightDown;
-//						//Methods.finished = true;
-//						
-//					}
-//					 if(Methods.location[7][8]==Methods.rightDown && !Methods.finished){
-//						Methods.location[7][8] = Methods.leftDown;
-//						//Methods.finished = true;
-//					}
-//					 if(Methods.location[7][8]==Methods.leftDown && !Methods.finished){
-//						Methods.location[7][8] = Methods.leftUp;
-//						//Methods.finished = true;
-//					}
-			Methods.rotate(7,8,680,570);
+			//Methods.finished = false;
+			numRotates++;
+			Methods.changeLocation= true;
+			rotate = false;
+			Methods.rotateMirrorOnce = true;
+
 		}
 		
 		
@@ -95,11 +94,17 @@ public class Easy1 extends BasicGameState{
 				sbg.enterState(0);
 			}
 		}
+		//Added ALL OF THIS  for game
 		if((xPos>682 && xPos<746)&&(yPos>83 && yPos<145)){
 			if(input.isMouseButtonDown(0)){
-				
+				//ADDED THIS FOR ROTATES
+				isButtonUp = true;		
+			}
+		}
+		if(isButtonUp){
+			if(!input.isMouseButtonDown(0)){
 				rotate = true;
-			
+				isButtonUp = false;
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){

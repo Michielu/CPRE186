@@ -24,6 +24,7 @@ public class Medium5 extends BasicGameState{
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
 		Methods.blankTiles();
+		Methods.generateBoard();
 		
 		if(shoot){
 			Methods.shoot();

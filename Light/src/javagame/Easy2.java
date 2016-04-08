@@ -21,6 +21,7 @@ public class Easy2 extends BasicGameState{
 		Methods.currentStateNum = 12;
 		background.draw(0, 0);
 		Methods.blankTiles();
+		Methods.generateBoard();
 		
 		if(shoot){
 			Methods.shoot();

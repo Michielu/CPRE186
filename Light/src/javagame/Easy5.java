@@ -22,6 +22,7 @@ public class Easy5 extends BasicGameState{
 		Methods.currentStateNum = 15;
 		gameBoard.draw(0,0);
 		Methods.blankTiles();
+		Methods.generateBoard();
 		
 		if(shoot){
 			Methods.shoot();

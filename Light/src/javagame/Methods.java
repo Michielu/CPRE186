@@ -10,6 +10,7 @@ public class Methods extends BasicGameState {
 	//For rotate method
 	 static boolean finished = false;
 	 static boolean changeLocation;
+	 public static boolean rotateMirrorOnce = false; //For rotateMirror method 
 	
 	public static int xStart = 260;
 	public static int yStart = 80;
@@ -18,9 +19,9 @@ public class Methods extends BasicGameState {
 	public static int target = 100;
 	//Mirrors
 	public static int leftUp = 10;
-	public static int leftDown = 20;
-	public static int rightUp = 30;
-	public static int rightDown = 40;
+	public static int leftDown = 40;
+	public static int rightUp = 20;
+	public static int rightDown = 30;
 	public static int wall = 50;
 	public static int vertLight = 51;
 	public static int horizLight = 52;
@@ -136,7 +137,7 @@ public class Methods extends BasicGameState {
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
-		
+
 	}
 	
 	public static void shoot() throws SlickException{
@@ -179,6 +180,11 @@ public class Methods extends BasicGameState {
 		}
 		xStart = 260;
 		yStart = 80;
+		
+	}
+
+	public static void generateBoard(){
+
 		if (currentStateNum ==11){
 			generateEasy1();
 		}
@@ -225,13 +231,59 @@ public class Methods extends BasicGameState {
 			generateHard5();
 		}
 	}
-
 	
 	public int getID(){
 		return 100;
 	}
-	
-	public static void generateEasy1(){ //TODO just for a marker for shooting light
+	//TODO change all of these names
+	public static void generateBoardRotated(){
+		if (currentStateNum ==11){
+			generateEasy1Rotated();
+		}
+		else if(currentStateNum == 12){
+			generateEasy2();
+		}
+		else if (currentStateNum == 13){
+			generateEasy3();
+		}
+		else if(currentStateNum == 14){
+			generateEasy4();
+		}
+		else if(currentStateNum == 15){
+			generateEasy5();
+		}
+		else if(currentStateNum == 21 ){
+			generateMedium1();
+		}
+		else if(currentStateNum ==22){
+			generateMedium2();
+		}
+		else if(currentStateNum ==23){
+			generateMedium3();
+		}
+		else if(currentStateNum == 24){
+			generateMedium4();
+		}
+		else if(currentStateNum ==25){
+			generateMedium5();
+		}
+		else if(currentStateNum == 31){
+			generateHard1();
+		}
+		else if(currentStateNum ==32){
+			generateHard2();
+		}
+		else if(currentStateNum == 33){
+			generateHard3();
+		}
+		else if(currentStateNum ==34){
+			generateHard4();
+		}
+		else if (currentStateNum==35){
+			generateHard5();
+		}
+	}
+	public static void generateEasy1(){
 		clearArray();
 		powerOff.draw(820, 590);
 		startTileRight.draw(X1,Y8);
@@ -250,12 +302,73 @@ public class Methods extends BasicGameState {
 		
 		mUpLeft.draw(X7, Y8);
 		location[7][8]=leftUp;
-		if(changeLocation){
-			location [7][8] = locationUpdate(location[7][8]);
-		}
 
+		mDownRight.draw(X7,Y1);
+		location[7][1] = rightDown;
+		
+		mDownRight.draw(X1,Y5);
+		location[1][5] = rightDown;
+		
+		mUpLeft.draw(X8, Y5);
+		location[8][5] = leftUp;
+	}
+	public static void generateEasy1Rotated(){
+		//clearArray();
+		powerOff.draw(820, 590);
+		startTileRight.draw(X1,Y8);
+		startLight = true;
+		
+		xStart =X1;
+		yStart=Y8;
+		arrayX = 1;
+		arrayY =8;
+		direction = 1;
 		
 		
+		endTile.draw(X8, Y1);
+		location[8][1] = target;
+		
+		
+		//mUpLeft.draw(X7, Y8);
+		//location[7][8]=leftUp;
+		if(changeLocation){
+			while(Methods.rotateMirrorOnce){
+				rotateMirror(7,8,680,570);
+				location [7][8] = locationUpdate(location[7][8]);
+				Methods.rotateMirrorOnce = false;
+			}
+
+		}
+		else{
+			while(true){
+				if (location [7][8] == leftUp){
+					mUpLeft.draw(X7, Y8);
+					//Methods.rotateMirrorOnce = false;
+					break;
+					
+				}
+				else if(location[7][8] == rightUp){
+					mUpRight.draw(X7, Y8);
+					//Methods.rotateMirrorOnce = false;
+					break;
+					
+				}
+				else if(location[7][8] == rightDown){
+					mDownRight.draw(X7, Y8);
+					//Methods.rotateMirrorOnce = false;
+					break;
+				
+				}
+				else if(location[7][8] == leftDown){
+					mDownLeft.draw(X7, Y8);
+					//Methods.rotateMirrorOnce = false;
+					break;
+				}
+			}
+			
+		}
+		System.out.println(location[7][8]);
+
 		mDownRight.draw(X7,Y1);
 		location[7][1] = rightDown;
 		
@@ -851,38 +964,49 @@ public class Methods extends BasicGameState {
 	 * @param aY
 	 */
 	//TODO rotate mirrors Draws new mirrors but updated value for location[x][y] doesn't stay.
-	public static void rotate(int x, int y, int aX, int aY){
-		
-		if(location[x][y] == leftUp&& !finished){
-			mUpRight.draw(aX, aY);
-			System.out.println(location[x][y]);
-			//location[x][y] = rightUp;
-			//leftUp = rightUp;
-			if(!finished){
+	public static void rotateMirror(int x, int y, int aX, int aY){
+		while(rotateMirrorOnce){
+			System.out.println(location[7][8]);
+
+			if(location[x][y] == leftUp ){ //!finished
+				mUpRight.draw(aX, aY);
+				//System.out.println(location[x][y]);
+				//location[x][y] = rightUp;
+				//leftUp = rightUp;
+				//System.out.println(location[x][y]);
+				//mUpRight.draw(aX-70, aY-70);
+				//finished = true;
+				//changeLocation = true;
+				rotateMirrorOnce = false;
+				break;
 				
 			}
-			System.out.println(location[x][y]);
-			//mUpRight.draw(aX-70, aY-70);
-			finished = true;
-			changeLocation = true;
-			
+			 if(location[x][y]==rightUp ){ //!finished
+				mDownRight.draw(aX, aY);
+				//location[x][y] = rightDown;
+				//finished = true;
+				//changeLocation = true;
+				rotateMirrorOnce = false;
+				break;
+			}
+			 if(location[x][y]==rightDown  ){//!finished
+				mDownLeft.draw(aX, aY);
+				//location[x][y] = leftDown;
+				//finished = true;
+				//changeLocation = true;
+				rotateMirrorOnce = false;
+				break;
+			}
+			 if(location[x][y]==leftDown  ){ //!finished
+				mUpLeft.draw(aX, aY);
+				//location[x][y] = leftUp;
+				//finished = true;
+				//changeLocation = true;
+				rotateMirrorOnce = false;
+				break;
+			}
 		}
-		 if(location[x][y]==rightUp&& !finished){
-			mDownRight.draw(aX, aY);
-			//location[x][y] = rightDown;
-			finished = true;
-			
-		}
-		 if(location[x][y]==rightDown && !finished){
-			mDownLeft.draw(aX, aY);
-			//location[x][y] = leftDown;
-			finished = true;
-		}
-		 if(location[x][y]==leftDown && !finished){
-			mUpLeft.draw(aX, aY);
-			//location[x][y] = leftUp;
-			finished = true;
-		}
+		
 	}
 	/**
 	 * 
@@ -891,15 +1015,19 @@ public class Methods extends BasicGameState {
 	 */
 	private static int locationUpdate(int i) {
 		if(i == leftUp){
-			return leftDown;
+			changeLocation = false;
+			return rightUp;
 		}
 		if(i==rightUp){
+			changeLocation = false;
 			return rightDown;
 		}
 		if(i==rightDown){
+			changeLocation = false;
 			return leftDown;
 		}
 		if(i==leftDown){
+			changeLocation = false;
 			return leftUp;
 		}
 		return i;
@@ -937,7 +1065,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
-				location[aX][aY] = vertLight;
+				//location[aX][aY] = vertLight;
 			}
 
 			startY-=70;
@@ -1079,6 +1207,8 @@ public class Methods extends BasicGameState {
 		
 		
 	}
+
+	
 
 	
 }
