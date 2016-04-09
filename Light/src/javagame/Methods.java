@@ -11,6 +11,8 @@ public class Methods extends BasicGameState {
 	 static boolean finished = false;
 	 static boolean changeLocation;
 	 public static boolean rotateMirrorOnce = false; //For rotateMirror method 
+	 public static int xRotate;
+	 public static int yRotate;
 	
 	public static int xStart = 260;
 	public static int yStart = 80;
@@ -25,6 +27,11 @@ public class Methods extends BasicGameState {
 	public static int wall = 50;
 	public static int vertLight = 51;
 	public static int horizLight = 52;
+	
+	public static int startUp = 12;
+	public static int startRight = 13;
+	public static int startDown = 14;
+	public static int startLeft = 15;
 	
 	
 	public static int X1 = 260;
@@ -314,8 +321,8 @@ public class Methods extends BasicGameState {
 	}
 	public static void generateEasy1Rotated(){
 		//clearArray();
-		powerOff.draw(820, 590);
-		startTileRight.draw(X1,Y8);
+//		powerOff.draw(820, 590);
+//		startTileRight.draw(X1,Y8);
 		startLight = true;
 		
 		xStart =X1;
@@ -333,50 +340,41 @@ public class Methods extends BasicGameState {
 		//location[7][8]=leftUp;
 		if(changeLocation){
 			while(Methods.rotateMirrorOnce){
-				rotateMirror(7,8,680,570);
-				location [7][8] = locationUpdate(location[7][8]);
+				rotateMirror(xRotate,yRotate,260+(xRotate*70),80+(yRotate*70));
+				location [xRotate][yRotate] = locationUpdate(location[xRotate][yRotate]);
 				Methods.rotateMirrorOnce = false;
 			}
-
 		}
 		else{
 			while(true){
-				if (location [7][8] == leftUp){
-					mUpLeft.draw(X7, Y8);
-					//Methods.rotateMirrorOnce = false;
-					break;
-					
+				if (location [xRotate][yRotate] == leftUp){
+					mUpLeft.draw(260+(xRotate-1)*70, 80+((yRotate-1)*70));
+					break;	
 				}
-				else if(location[7][8] == rightUp){
-					mUpRight.draw(X7, Y8);
-					//Methods.rotateMirrorOnce = false;
+				else if(location[xRotate][yRotate] == rightUp){
+					mUpRight.draw(260+(xRotate-1)*70, 80+((yRotate-1)*70));
 					break;
-					
 				}
-				else if(location[7][8] == rightDown){
-					mDownRight.draw(X7, Y8);
-					//Methods.rotateMirrorOnce = false;
+				else if(location[xRotate][yRotate] == rightDown){
+					mDownRight.draw(260+(xRotate-1)*70, 80+((yRotate-1)*70));
 					break;
-				
 				}
-				else if(location[7][8] == leftDown){
-					mDownLeft.draw(X7, Y8);
-					//Methods.rotateMirrorOnce = false;
+				else if(location[xRotate][yRotate] == leftDown){
+					mDownLeft.draw(260+(xRotate-1)*70, 80+((yRotate-1)*70));
 					break;
 				}
 			}
 			
 		}
-		System.out.println(location[7][8]);
 
-		mDownRight.draw(X7,Y1);
-		location[7][1] = rightDown;
+//		mDownRight.draw(X7,Y1);
+//		location[7][1] = rightDown;
 		
-		mDownRight.draw(X1,Y5);
-		location[1][5] = rightDown;
-		
-		mUpLeft.draw(X8, Y5);
-		location[8][5] = leftUp;
+//		mDownRight.draw(X1,Y5);
+//		location[1][5] = rightDown;
+//		
+//		mUpLeft.draw(X8, Y5);
+//		location[8][5] = leftUp;
 	}
 	
 
@@ -679,7 +677,6 @@ public class Methods extends BasicGameState {
 		mDownLeft.draw(X4, Y2);
 		location[4][2] = leftDown;
 	}
-	
 	public static void generateHard1(){
 		clearArray();
 		powerOff.draw(820, 590);
@@ -966,47 +963,48 @@ public class Methods extends BasicGameState {
 	//TODO rotate mirrors Draws new mirrors but updated value for location[x][y] doesn't stay.
 	public static void rotateMirror(int x, int y, int aX, int aY){
 		while(rotateMirrorOnce){
-			System.out.println(location[7][8]);
 
 			if(location[x][y] == leftUp ){ //!finished
 				mUpRight.draw(aX, aY);
-				//System.out.println(location[x][y]);
-				//location[x][y] = rightUp;
-				//leftUp = rightUp;
-				//System.out.println(location[x][y]);
-				//mUpRight.draw(aX-70, aY-70);
-				//finished = true;
-				//changeLocation = true;
 				rotateMirrorOnce = false;
-				break;
-				
+				break;		
 			}
 			 if(location[x][y]==rightUp ){ //!finished
 				mDownRight.draw(aX, aY);
-				//location[x][y] = rightDown;
-				//finished = true;
-				//changeLocation = true;
 				rotateMirrorOnce = false;
 				break;
 			}
 			 if(location[x][y]==rightDown  ){//!finished
 				mDownLeft.draw(aX, aY);
-				//location[x][y] = leftDown;
-				//finished = true;
-				//changeLocation = true;
 				rotateMirrorOnce = false;
 				break;
 			}
 			 if(location[x][y]==leftDown  ){ //!finished
 				mUpLeft.draw(aX, aY);
-				//location[x][y] = leftUp;
-				//finished = true;
-				//changeLocation = true;
 				rotateMirrorOnce = false;
 				break;
 			}
+//			 if(location[x][y] == startUp ){
+//				 startTileUp.draw(aX, aY);
+//				 rotateMirrorOnce = false;
+//					break;
+//			 }
+//			 if(location[x][y] == startRight){
+//				 startTileRight.draw(aX, aY);
+//				 rotateMirrorOnce = false;
+//					break;
+//			 }
+//			 if(location[x][y] == startDown){
+//				 startTileDown.draw(aX, aY);
+//				 rotateMirrorOnce = false;
+//					break;
+//			 }
+//			 if(location[x][y] == startLeft){
+//				 startTileLeft.draw(aX, aY);
+//				 rotateMirrorOnce = false;
+//					break;
+//			 }
 		}
-		
 	}
 	/**
 	 * 
@@ -1030,6 +1028,22 @@ public class Methods extends BasicGameState {
 			changeLocation = false;
 			return leftUp;
 		}
+//		if(i==startUp){
+//			changeLocation = false;
+//			return startLeft;
+//		}
+//		if(i==startLeft){
+//			changeLocation = false;
+//			return startDown;
+//		}
+//		if(i==startDown){
+//			changeLocation = false;
+//			return startRight;
+//		}
+//		if(i==startRight){
+//			changeLocation = false;
+//			return startUp;
+//		}
 		return i;
 	}
 	
@@ -1053,7 +1067,7 @@ public class Methods extends BasicGameState {
 				break;
 			}
 			else if(location[aX][aY]== wall){ // Don't need this? bc of location == 0 one?
-				return;
+				break;
 			}
 			else if(location[aX][aY]== target){
 				endLightDown.draw(startX, startY);
@@ -1067,12 +1081,12 @@ public class Methods extends BasicGameState {
 				beamVertical.draw(startX, startY);
 				//location[aX][aY] = vertLight;
 			}
-
+			else if(location[aX][aY] == rightUp || location[aX][aY]==leftUp){
+				break;
+			}
 			startY-=70;
-			aY-=1;
-			
+			aY-=1;	
 		}
-		
 	}
 	public static void shootRight(int direction, int startX, int startY, int aX, int aY){
 		//If this is the first move
@@ -1100,7 +1114,7 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY]== wall){
 				//TODO wall stuffffff
-				return;
+				break;
 			}
 			else if(location[aX][aY]== target){
 				endLightLeft.draw(startX, startY);
@@ -1113,9 +1127,11 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY] == 0){
 				beamHorizontal.draw(startX, startY);
-				location[aX][aY] = horizLight;
+				//location[aX][aY] = horizLight;
 			}
-			
+			else if(location[aX][aY] == rightUp || location[aX][aY]==rightDown){
+				break;
+			}
 			startX+=70;
 			aX+=1;
 			
@@ -1142,7 +1158,7 @@ public class Methods extends BasicGameState {
 				break;
 			}
 			else if(location[aX][aY]== wall){
-				return;
+				break;
 			}
 			else if(location[aX][aY]== target){
 				endLightUp.draw(startX, startY);
@@ -1154,9 +1170,11 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
-				location[aX][aY] = vertLight;
+				//location[aX][aY] = vertLight;
 			}
-
+			else if(location[aX][aY] == leftDown || location[aX][aY]==rightDown){
+				break;
+			}
 			startY+=70;
 			aY+=1;
 			
@@ -1196,7 +1214,10 @@ public class Methods extends BasicGameState {
 			}
 			else if(location[aX][aY] == 0){
 				beamHorizontal.draw(startX, startY);
-				location[aX][aY] = horizLight;
+				//location[aX][aY] = horizLight;
+			}
+			else if(location[aX][aY] == leftUp || location[aX][aY]==leftDown){
+				break;
 			}
 			
 			startX-=70;
@@ -1207,8 +1228,37 @@ public class Methods extends BasicGameState {
 		
 		
 	}
+	/**
+	 * During the rotation of the mirrors, 
+	 * it takes in the mouse position on the Y axis and 
+	 * returns the number for int[][] location[][y]
+	 * 
+	 * @param yPos
+	 * @return
+	 */
+	public static int findYRotate(int yPos){
+		int num = 1;
+		
+		if(yPos>=490){
+			return num; 
+		}
+		else {
+			num += findYRotate(yPos+70);
+		}
+		return num;
+	}
 
+	public static int findXRotate(int xPos) {
+		int num = 1;
 	
+		if(xPos<=70){
+			return num; 
+		}
+		else {
+			num += findXRotate(xPos-70);
+		}
+		return num;
+	}
 
 	
 }

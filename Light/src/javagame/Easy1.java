@@ -50,7 +50,6 @@ public class Easy1 extends BasicGameState{
 		
 		if(shoot){
 			Methods.shoot();
-			
 		}
 		if(refresh){
 			shoot = false;
@@ -59,8 +58,6 @@ public class Easy1 extends BasicGameState{
 			numRotates = 0;
 		}
 		if(rotate){
-			
-			//Methods.finished = false;
 			numRotates++;
 			Methods.changeLocation= true;
 			rotate = false;
@@ -95,7 +92,7 @@ public class Easy1 extends BasicGameState{
 			}
 		}
 		//Added ALL OF THIS  for game
-		if((xPos>682 && xPos<746)&&(yPos>83 && yPos<145)){
+		if((xPos>260 && xPos<820)&&(yPos>80 && yPos<640)){
 			if(input.isMouseButtonDown(0)){
 				//ADDED THIS FOR ROTATES
 				isButtonUp = true;		
@@ -105,6 +102,8 @@ public class Easy1 extends BasicGameState{
 			if(!input.isMouseButtonDown(0)){
 				rotate = true;
 				isButtonUp = false;
+				Methods.xRotate =  Methods.findXRotate(xPos-260);
+				Methods.yRotate = Methods.findYRotate(yPos-80);
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
@@ -112,8 +111,6 @@ public class Easy1 extends BasicGameState{
 				shoot = true;
 			}
 		}
-		
-		
 		if(!input.isMouseButtonDown(0)){
 			Play.canContinue=true;
 		}
