@@ -8,11 +8,12 @@ import org.lwjgl.input.Mouse;
 public class Easy1 extends BasicGameState{
 	public static boolean shoot;
 	public static boolean refresh;
-
-	public static boolean blankTileOnce = true;
 	Image gameBoard;
-	public static Image tileNormal;
 	public String mouse = "No input yet";
+
+	//public static boolean blankTileOnce = true;
+	//public static Image tileNormal;
+	
 
 	
 	//Created for rotating mirrors thingie
@@ -27,7 +28,7 @@ public class Easy1 extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
-		tileNormal = new Image("res/tile/blank_tile(70x70).png");
+		//tileNormal = new Image("res/tile/blank_tile(70x70).png");
 		
 	}
 	
@@ -38,14 +39,14 @@ public class Easy1 extends BasicGameState{
 		Methods.blankTiles();
 
 			
-			
-		if(numRotates == 0){
+		//Added these for rotating 
+		if(numRotates <=1){
 			Methods.generateBoard();
 		}
-		else if(numRotates != 0){
+		else if(numRotates > 1){
 			Methods.generateBoardRotated();
 		}
-		
+		System.out.println(numRotates);
 		
 		
 		if(shoot){
@@ -59,6 +60,7 @@ public class Easy1 extends BasicGameState{
 		}
 		if(rotate){
 			numRotates++;
+			
 			Methods.changeLocation= true;
 			rotate = false;
 			Methods.rotateMirrorOnce = true;

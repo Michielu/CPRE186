@@ -9,6 +9,12 @@ public class Easy2 extends BasicGameState{
 	public static boolean shoot;
 	public static boolean refresh;
 	Image background;
+	
+	//Created for rotating mirrors thingie
+	public static boolean rotate;
+	public int numRotates =0;
+	public static boolean isButtonUp;
+	
 	public Easy2(int state){ 
 		
 	}
@@ -21,7 +27,16 @@ public class Easy2 extends BasicGameState{
 		Methods.currentStateNum = 12;
 		background.draw(0, 0);
 		Methods.blankTiles();
-		Methods.generateBoard();
+		
+		
+		//Added these for rotating 
+		if(numRotates <=1){
+			Methods.generateBoard();
+		}
+		else if(numRotates > 1){
+			Methods.generateBoardRotated();
+		}
+		
 		
 		if(shoot){
 			Methods.shoot();
@@ -29,6 +44,16 @@ public class Easy2 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
+			//Added this with rotates stuff
+			numRotates = 0;
+		}
+		if(rotate){
+			numRotates++;
+			
+			Methods.changeLocation= true;
+			rotate = false;
+			Methods.rotateMirrorOnce = true;
+
 		}
 		
 	}
@@ -42,6 +67,21 @@ public class Easy2 extends BasicGameState{
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
+			}
+		}
+		// Added ALL OF THIS for game
+		if ((xPos > 260 && xPos < 820) && (yPos > 80 && yPos < 640)) {
+			if (input.isMouseButtonDown(0)) {
+				// ADDED THIS FOR ROTATES
+				isButtonUp = true;
+			}
+		}
+		if (isButtonUp) {
+			if (!input.isMouseButtonDown(0)) {
+				rotate = true;
+				isButtonUp = false;
+				Methods.xRotate = Methods.findXRotate(xPos - 260);
+				Methods.yRotate = Methods.findYRotate(yPos - 80);
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
