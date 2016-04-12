@@ -12,7 +12,7 @@ public class Easy2 extends BasicGameState{
 	
 	//Created for rotating mirrors thingie
 	public static boolean rotate;
-	public int numRotates =0;
+	public static int numRotates =0;
 	public static boolean isButtonUp;
 	
 	public Easy2(int state){ 
@@ -104,6 +104,7 @@ public class Easy2 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				Easy3.numRotates ++;
 				sbg.enterState(13);
 			}
 		}

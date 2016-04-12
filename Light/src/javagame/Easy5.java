@@ -12,7 +12,7 @@ public class Easy5 extends BasicGameState{
 	
 	//Created for rotating mirrors thingie
 	public static boolean rotate;
-	public int numRotates =0;
+	public static int numRotates =0;
 	public static boolean isButtonUp;
 
 	public Easy5(int state){ 
