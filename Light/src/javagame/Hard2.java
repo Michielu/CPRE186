@@ -10,6 +10,11 @@ public class Hard2 extends BasicGameState{
 	public static boolean refresh;
 	Image gameBoard;
 	public String mouse = "No input yet";
+	
+	//Created for rotating mirrors thingie
+	public static boolean rotate;
+	public static int numRotates =0;
+	public static boolean isButtonUp;
 
 	public Hard2(int state){ 
 		
@@ -24,7 +29,12 @@ public class Hard2 extends BasicGameState{
 		gameBoard.draw(0,0);
 		g.drawString(mouse, 50, 50);
 		Methods.blankTiles();
-		Methods.generateBoard();
+		// Added these for rotating
+		if (numRotates <= 1) {
+			Methods.generateBoard();
+		} else if (numRotates > 1) {
+			Methods.generateBoardRotated();
+		}
 		
 		if(shoot){
 			Methods.shoot();
@@ -32,6 +42,15 @@ public class Hard2 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
+			numRotates = 1;
+		}
+		if(rotate){
+			numRotates++;
+			
+			Methods.changeLocation= true;
+			rotate = false;
+			Methods.rotateMirrorOnce = true;
+
 		}
 	}
 
@@ -45,6 +64,20 @@ public class Hard2 extends BasicGameState{
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
 				sbg.enterState(0);
+			}
+		}
+		if((xPos>260 && xPos<820)&&(yPos>80 && yPos<640)){
+			if(input.isMouseButtonDown(0)){
+				//ADDED THIS FOR ROTATES
+				isButtonUp = true;		
+			}
+		}
+		if(isButtonUp){
+			if(!input.isMouseButtonDown(0)){
+				rotate = true;
+				isButtonUp = false;
+				Methods.xRotate =  Methods.findXRotate(xPos-260);
+				Methods.yRotate = Methods.findYRotate(yPos-80);
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
@@ -66,6 +99,7 @@ public class Hard2 extends BasicGameState{
 		if((xPos<802 && xPos>771)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				Hard3.numRotates ++;
 				sbg.enterState(33);
 			}
 		}

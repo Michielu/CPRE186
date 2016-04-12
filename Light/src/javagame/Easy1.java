@@ -127,16 +127,6 @@ public class Easy1 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				
-				
-				
-				
-				
-				//MICHIELU!
-				
-				
-				
-				//So it starts out as 1 - add it to hard
 				Easy2.numRotates ++;
 				sbg.enterState(12);
 			}

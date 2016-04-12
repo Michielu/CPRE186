@@ -969,8 +969,10 @@ public class Methods extends BasicGameState {
 		location[2][5] = rightDown;
 		mUpLeft.draw(X3, Y5);
 		location[3][5] = leftUp;
-		mDownRight.draw(X3, Y1);
-		location[3][1] = rightDown;
+//		mDownRight.draw(X3, Y1);
+//		location[3][1] = rightDown;
+		mDownLeft.draw(X3, Y1);
+		location[3][1] = leftDown;
 		mDownLeft.draw(X4, Y1);
 		location[4][1] = leftDown;
 		mUpRight.draw(X4, Y8);
@@ -979,8 +981,10 @@ public class Methods extends BasicGameState {
 		location[8][8] = leftUp;
 		mDownLeft.draw(X8,Y7);
 		location[8][7] = leftDown;
-		mUpRight.draw(X6, Y7);
-		location[6][7] = rightUp;
+//		mUpRight.draw(X6, Y7);
+//		location[6][7] = rightUp;
+		mDownRight.draw(X6, Y7);
+		location[6][7] = rightDown;
 		mDownLeft.draw(X6, Y2);
 		location[6][2]=leftDown;
 		mUpRight.draw(X5, Y2);
