@@ -27,6 +27,7 @@ public class Methods extends BasicGameState {
 	public static int wall = 50;
 	public static int vertLight = 51;
 	public static int horizLight = 52;
+	public static int cross = 1000;
 	
 	public static int startUp = 12;
 	public static int startRight = 13;
@@ -57,10 +58,6 @@ public class Methods extends BasicGameState {
 	public static int LEFT =3;
 	public static int direction; 
 	public static int[][] location = new int[10][10] ;
-	
-	
-	
-	
 	
 	public static int currentStateNum;
 	//End Tiles
@@ -233,7 +230,6 @@ public class Methods extends BasicGameState {
 	public int getID(){
 		return 100;
 	}
-	//TODO change all of these names
 	public static void generateBoardRotated(){
 
 		if (currentStateNum ==11){
@@ -1105,6 +1101,7 @@ public class Methods extends BasicGameState {
 		for(int i =0; i<rows;i++){
 			for(int j= 0; j<col;j++){
 				location[i][j] = 0;
+				locationBool[i][j] = false;
 			}
 		}
 	}
@@ -1195,6 +1192,16 @@ public class Methods extends BasicGameState {
 			changeLocation = false;
 			return startUp;
 		}
+		
+		//
+		if(i==vertLight){
+			changeLocation = false;
+			return vertLight;
+		}
+		if(i==horizLight){
+			changeLocation = false;
+			return horizLight;
+		}
 		return i;
 	}
 	
@@ -1225,12 +1232,13 @@ public class Methods extends BasicGameState {
 				levelComplete.draw(0, 0);
 				break;
 			}
-			else if(location[aX][aY] == horizLight){
+			else if(location[aX][aY] == horizLight|| location[aX][aY] == cross){
 				beamCross.draw(startX, startY);
+				location[aX][aY] = cross;
 			}
 			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
-				//location[aX][aY] = vertLight;
+				location[aX][aY] = vertLight;
 			}
 			else if(location[aX][aY] == rightUp || location[aX][aY]==leftUp){
 				break;
@@ -1273,12 +1281,14 @@ public class Methods extends BasicGameState {
 				break;
 				//LEVEL COMPLETED!
 			}
-			else if(location[aX][aY] == vertLight){
+			else if(location[aX][aY] == vertLight|| location[aX][aY] == cross){
 				beamCross.draw(startX, startY);
+				location[aX][aY] = cross;
+				
 			}
-			else if(location[aX][aY] == 0){
+			else if(location[aX][aY] == 0 || location[aX][aY] == horizLight){
 				beamHorizontal.draw(startX, startY);
-				//location[aX][aY] = horizLight;
+				location[aX][aY] = horizLight;
 			}
 			else if(location[aX][aY] == rightUp || location[aX][aY]==rightDown){
 				break;
@@ -1316,12 +1326,13 @@ public class Methods extends BasicGameState {
 				levelComplete.draw(0, 0);
 				break;
 			}
-			else if(location[aX][aY] == horizLight){
+			else if(location[aX][aY] == horizLight|| location[aX][aY] == cross){
 				beamCross.draw(startX, startY);
+				location[aX][aY] = cross;
 			}
 			else if(location[aX][aY] == 0){
 				beamVertical.draw(startX, startY);
-				//location[aX][aY] = vertLight;
+				location[aX][aY] = vertLight;
 			}
 			else if(location[aX][aY] == leftDown || location[aX][aY]==rightDown){
 				break;
@@ -1360,12 +1371,13 @@ public class Methods extends BasicGameState {
 				//LEVEL COMPLETED!
 				break;
 			}
-			else if(location[aX][aY] == vertLight){
+			else if(location[aX][aY] == vertLight|| location[aX][aY] == cross){
 				beamCross.draw(startX, startY);
+				location[aX][aY] = cross;
 			}
-			else if(location[aX][aY] == 0){
+			else if(location[aX][aY] == 0 || location[aX][aY] == horizLight ){
 				beamHorizontal.draw(startX, startY);
-				//location[aX][aY] = horizLight;
+				location[aX][aY] = horizLight;
 			}
 			else if(location[aX][aY] == leftUp || location[aX][aY]==leftDown){
 				break;
