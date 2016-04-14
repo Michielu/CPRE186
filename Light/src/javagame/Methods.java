@@ -1101,7 +1101,7 @@ public class Methods extends BasicGameState {
 		for(int i =0; i<rows;i++){
 			for(int j= 0; j<col;j++){
 				location[i][j] = 0;
-				locationBool[i][j] = false;
+
 			}
 		}
 	}
@@ -1236,7 +1236,7 @@ public class Methods extends BasicGameState {
 				beamCross.draw(startX, startY);
 				location[aX][aY] = cross;
 			}
-			else if(location[aX][aY] == 0){
+			else if(location[aX][aY] == 0|| location[aX][aY] == vertLight ){
 				beamVertical.draw(startX, startY);
 				location[aX][aY] = vertLight;
 			}
@@ -1286,7 +1286,7 @@ public class Methods extends BasicGameState {
 				location[aX][aY] = cross;
 				
 			}
-			else if(location[aX][aY] == 0 || location[aX][aY] == horizLight){
+			else if(location[aX][aY] == 0|| location[aX][aY] == horizLight){
 				beamHorizontal.draw(startX, startY);
 				location[aX][aY] = horizLight;
 			}
@@ -1330,7 +1330,7 @@ public class Methods extends BasicGameState {
 				beamCross.draw(startX, startY);
 				location[aX][aY] = cross;
 			}
-			else if(location[aX][aY] == 0){
+			else if(location[aX][aY] == 0||location[aX][aY] == vertLight ){
 				beamVertical.draw(startX, startY);
 				location[aX][aY] = vertLight;
 			}
@@ -1375,7 +1375,7 @@ public class Methods extends BasicGameState {
 				beamCross.draw(startX, startY);
 				location[aX][aY] = cross;
 			}
-			else if(location[aX][aY] == 0 || location[aX][aY] == horizLight ){
+			else if(location[aX][aY] == 0|| location[aX][aY] == horizLight ){
 				beamHorizontal.draw(startX, startY);
 				location[aX][aY] = horizLight;
 			}
