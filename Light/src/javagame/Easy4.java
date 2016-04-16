@@ -2,6 +2,9 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
+
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
@@ -43,6 +46,7 @@ public class Easy4 extends BasicGameState{
 			refresh = false;
 			//Added this with rotates stuff
 			numRotates = 0;
+			Methods.list = new ArrayList<>();
 		}
 		if(rotate){
 			numRotates++;
@@ -78,6 +82,7 @@ public class Easy4 extends BasicGameState{
 				isButtonUp = false;
 				Methods.xRotate = Methods.findXRotate(xPos - 260);
 				Methods.yRotate = Methods.findYRotate(yPos - 80);
+				Methods.locationBool[Methods.xRotate][Methods.yRotate] = false;
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){

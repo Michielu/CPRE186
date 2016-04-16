@@ -2,10 +2,14 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
+
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 
 public class Methods extends BasicGameState {
+	static ArrayList<Cell> list = new ArrayList<>();
 	public static boolean startLight ;
 	//For rotate method
 	 static boolean finished = false;
@@ -58,6 +62,7 @@ public class Methods extends BasicGameState {
 	public static int LEFT =3;
 	public static int direction; 
 	public static int[][] location = new int[10][10] ;
+	public static boolean[][] locationBool = new boolean[10][10] ;
 	
 	public static int currentStateNum;
 	//End Tiles
@@ -142,6 +147,7 @@ public class Methods extends BasicGameState {
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException{
 
+
 	}
 	
 	public static void shoot() throws SlickException{
@@ -170,6 +176,7 @@ public class Methods extends BasicGameState {
 			for(j=0; j<8;j++){
 				blankTile.draw(xStart, yStart);
 				yStart = yStart + 70;
+				//locationBool[i+1][j+1] = true;
 			}
 			xStart = xStart + 70;
 			yStart = 80;
@@ -179,6 +186,12 @@ public class Methods extends BasicGameState {
 	}
 
 	public static void generateBoard(){
+		for(int i=0;i<8;i++){
+			for(int j=0; j<8;j++){
+
+				locationBool[i+1][j+1] = true;
+			}
+		}
 
 		if (currentStateNum ==11){
 			generateEasy1();
@@ -317,6 +330,40 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X8, Y1);
 		location[8][1] = target;
+		
+		
+		
+		if(locationBool[1][8]){
+			startTileRight.draw(X1,Y8);
+			//location[1][8] = startRight;
+
+		}
+
+		
+		if(locationBool[7][8]){
+//			mUpLeft.draw(X7, Y8);
+//			location[7][8]=leftUp;
+			mUpRight.draw(X7, Y8);
+			//location[7][8] = rightUp;
+		}
+
+		if(locationBool[7][1]){
+			mDownRight.draw(X7,Y1);
+			//location[7][1] = rightDown;
+		}
+
+		if(locationBool[1][5]){
+//			mDownRight.draw(X1,Y5);
+//			location[1][5] = rightDown;
+			mDownLeft.draw(X1,Y5);
+			//location[1][5] = leftDown;
+		}
+
+		if(locationBool[8][5]){
+			mUpLeft.draw(X8, Y5);
+			//location[8][5] = leftUp;
+		}
+
 
 		generateRotatedAid();
 	}
@@ -326,6 +373,37 @@ public class Methods extends BasicGameState {
 		powerOff.draw(820, 590);
 		endTile.draw(X6, Y2);
 		location[6][2] = target;
+		
+		
+
+		if(locationBool[3][8]){
+		startTileUp.draw(X3, Y8);
+		}
+
+		if(locationBool[3][1]){
+			mDownRight.draw(X3, Y1);
+		}
+		
+		if(locationBool[8][1]){
+	//		mDownLeft.draw(X8, Y1);
+	//		location[8][1] = leftDown;
+			mDownRight.draw(X8, Y1);
+		}
+		
+		
+		if(locationBool[8][7]){
+			mUpLeft.draw(X8, Y7);
+		}
+		
+		if(locationBool[2][7]){
+//		mUpRight.draw(X2, Y7);
+//		location[2][7] = rightUp;
+			mDownRight.draw(X2, Y7);
+		}
+		
+		if(locationBool[2][2]){
+			mDownRight.draw(X2, Y2);
+		}
 
 		generateRotatedAid();
 	}
@@ -334,6 +412,38 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X5, Y1);
 		location[5][1] = target;
+		
+		
+		if(locationBool[3][8]){
+			startTileUp.draw(X3,Y8);
+		}
+		
+
+		if(locationBool[3][6]){
+			mDownRight.draw(X3, Y6);
+		}
+		
+		if(locationBool[5][6]){
+	//		mDownLeft.draw(X5, Y6);
+	//		location[5][6] = leftDown;
+			mDownRight.draw(X5, Y6);
+		}
+		if(locationBool[5][8]){
+			mUpRight.draw(X5, Y8);
+		}
+	
+		if(locationBool[8][8]){
+	//		mUpLeft.draw(X8, Y8);
+	//		location[8][8] = leftUp;
+			mDownRight.draw(X8, Y8);
+		}
+		if(locationBool[8][4]){
+			mDownLeft.draw(X8, Y4);
+		}
+		if(locationBool[5][4]){
+			mUpRight.draw(X5, Y4);
+		}
+
 
 		generateRotatedAid();
 	}
@@ -343,6 +453,43 @@ public class Methods extends BasicGameState {
 		endTile.draw(X6, Y4);
 		location[6][4] = target;
 
+		
+		if(locationBool[3][5]){
+			startTileRight.draw(X3, Y5);
+		}
+		
+		if(locationBool[7][5]){
+			mDownLeft.draw(X7, Y5);
+		}
+	
+		if(locationBool[7][7]){
+	//		mUpLeft.draw(X7, Y7);
+	//		location[7][7]=leftUp;
+			mDownRight.draw(X7, Y7);
+		}
+	
+		if(locationBool[3][7]){
+			mDownRight.draw(X3, Y7);
+		}
+	
+		if(locationBool[3][8]){
+			mUpRight.draw(X3, Y8);
+		}
+	
+		if(locationBool[8][8]){
+	//		mUpLeft.draw(X8, Y8);
+	//		location[8][8] = leftUp;
+			mUpRight.draw(X8, Y8);
+		}
+	
+		if(locationBool[8][1]){
+			mDownLeft.draw(X8, Y1);
+		}
+		if(locationBool[6][1]){
+			mDownRight.draw(X6, Y1);
+		}
+
+		
 		generateRotatedAid();
 	}
 	public static void generateEasy5Rotated(){
@@ -350,6 +497,58 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X4, Y4);
 		location[4][4] = target;
+		
+		if(locationBool[1][8]){
+			startTileRight.draw(X1, Y8);
+		}
+		if(locationBool[8][8]){
+			mUpLeft.draw(X8, Y8);
+		}
+		if(locationBool[8][1]){
+//			mDownLeft.draw(X8, Y1);
+//			location[8][1] = leftDown;
+			mDownRight.draw(X8, Y1);
+		}
+
+		if(locationBool[1][1]){
+			mDownRight.draw(X1, Y1);
+		}
+
+		if(locationBool[1][7]){
+			mUpRight.draw(X1, Y7);
+		}
+		if(locationBool[7][7]){
+			mUpLeft.draw(X7, Y7);
+		}
+		if(locationBool[7][2]){
+//			mDownLeft.draw(X7, Y2);
+//			location[7][2] =leftDown;
+			mUpLeft.draw(X7, Y2);
+		}
+		if(locationBool[2][2]){
+			mDownRight.draw(X2, Y2);
+		}
+		if(locationBool[2][6]){
+			mUpRight.draw(X2, Y6);
+		}
+		if(locationBool[6][6]){
+			mUpLeft.draw(X6, Y6);
+		}
+		if(locationBool[6][3]){
+			mDownLeft.draw(X6, Y3);
+		}
+		if(locationBool[3][3]){
+			mDownRight.draw(X3, Y3);
+		}
+		if(locationBool[3][5]){
+			mUpRight.draw(X3, Y5);
+		}
+		if(locationBool[5][5]){
+			mUpLeft.draw(X5,Y5);
+		}
+		if(locationBool[5][4]){
+			mDownLeft.draw(X5, Y4);
+		}
 
 		generateRotatedAid();
 	}
@@ -478,8 +677,12 @@ public class Methods extends BasicGameState {
 					startTileLeft.draw(260+(xRotate-1)*70, 80+((yRotate-1)*70));
 					break;
 				}
+				
+			
 			}
+			printList();
 		}
+		
 	}
 	public static void generateEasy2(){
 		clearArray();
@@ -1108,50 +1311,91 @@ public class Methods extends BasicGameState {
 	public static void rotateMirror(int x, int y, int aX, int aY){
 		while(rotateMirrorOnce){
 
-			if(location[x][y] == leftUp ){ //!finished
-				mUpRight.draw(aX, aY);
+			if(location[x][y] == leftUp ){ 
+				//mUpRight.draw(aX, aY);
+				list.add(new Cell(aX,aY,rightUp));
 				rotateMirrorOnce = false;
 				break;		
 			}
-			 if(location[x][y]==rightUp ){ //!finished
-				mDownRight.draw(aX, aY);
+			 if(location[x][y]==rightUp ){
+				 list.add(new Cell(aX,aY,rightDown));
+				//mDownRight.draw(aX, aY);
 				rotateMirrorOnce = false;
 				break;
 			}
-			 if(location[x][y]==rightDown  ){//!finished
-				mDownLeft.draw(aX, aY);
+			 if(location[x][y]==rightDown  ){
+				 list.add(new Cell(aX,aY,leftDown));
+				//mDownLeft.draw(aX, aY);
 				rotateMirrorOnce = false;
 				break;
 			}
-			 if(location[x][y]==leftDown  ){ //!finished
-				mUpLeft.draw(aX, aY);
+			 if(location[x][y]==leftDown  ){ 
+				//mUpLeft.draw(aX, aY);
+				list.add(new Cell(aX,aY,leftUp));
 				rotateMirrorOnce = false;
 				break;
 			}
 			 if(location[x][y] == startUp ){
-				 startTileRight.draw(aX, aY);
+				 list.add(new Cell(aX,aY,startRight));
+				 //startTileRight.draw(aX, aY);
 				 direction = 1;
 				 rotateMirrorOnce = false;
 					break;
 			 }
 			 if(location[x][y] == startRight){
-				 startTileDown.draw(aX, aY);
+				// startTileDown.draw(aX, aY);
+				 list.add(new Cell(aX,aY,startDown));
 				 direction =2;
 				 rotateMirrorOnce = false;
 					break;
 			 }
 			 if(location[x][y] == startDown){
-				 startTileLeft.draw(aX, aY);
+				 list.add(new Cell(aX,aY,startLeft));
+				 //startTileLeft.draw(aX, aY);
 				 direction =3;
 				 rotateMirrorOnce = false;
 					break;
 			 }
 			 if(location[x][y] == startLeft){
-				 startTileUp.draw(aX, aY);
+				 list.add(new Cell(aX,aY,startUp));
+				// startTileUp.draw(aX, aY);
 				 direction =0;
 				 rotateMirrorOnce = false;
 					break;
 			 }
+		}
+	}
+	
+	private static void printList(){
+		int size = list.size();
+		for(int i = 0; i<size; i++){
+			System.out.println("Cell " + i);
+			Cell temp = list.get(i);
+			if(temp.getDirection() == leftUp){
+				mUpLeft.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == rightUp){
+				mUpRight.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == leftDown){
+				mDownLeft.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == rightDown){
+				mDownRight.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == startUp){
+				startTileUp.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == startRight){
+				startTileRight.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == startDown){
+				startTileDown.draw(temp.getX(),temp.getY());
+			}
+			else if(temp.getDirection() == startLeft){
+				startTileLeft.draw(temp.getX(),temp.getY());
+			}
+
 		}
 	}
 	/**

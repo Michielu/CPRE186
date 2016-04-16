@@ -2,6 +2,9 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
+
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
@@ -30,6 +33,12 @@ public class Easy1 extends BasicGameState{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
 		//tileNormal = new Image("res/tile/blank_tile(70x70).png");
 		
+		
+		
+		//Added this
+		numRotates = 1;
+
+		
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -42,6 +51,7 @@ public class Easy1 extends BasicGameState{
 		//Added these for rotating 
 		if(numRotates <=1){
 			Methods.generateBoard();
+			Methods.list = new ArrayList<>();
 		}
 		else if(numRotates > 1){
 			Methods.generateBoardRotated();
@@ -55,8 +65,10 @@ public class Easy1 extends BasicGameState{
 		if(refresh){
 			shoot = false;
 			refresh = false;
-			//Added this with rotates stuff
 			numRotates = 1;
+			
+			//Added this
+			//Methods.list = new ArrayList<>();
 		}
 		if(rotate){
 			numRotates++;
@@ -106,6 +118,8 @@ public class Easy1 extends BasicGameState{
 				isButtonUp = false;
 				Methods.xRotate =  Methods.findXRotate(xPos-260);
 				Methods.yRotate = Methods.findYRotate(yPos-80);
+				Methods.locationBool[Methods.xRotate][Methods.yRotate] = false;
+				//System.out.println("x: " +Methods.xRotate + "y: "+ Methods.yRotate + Methods.locationBool[Methods.xRotate][Methods.yRotate]);
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
