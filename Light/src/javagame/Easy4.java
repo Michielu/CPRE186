@@ -23,7 +23,8 @@ public class Easy4 extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
-		
+		numRotates =1;
+
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -98,6 +99,7 @@ public class Easy4 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(13);
 			}
 		}
@@ -106,6 +108,7 @@ public class Easy4 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Easy5.numRotates ++;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(15);
 			}
 		}

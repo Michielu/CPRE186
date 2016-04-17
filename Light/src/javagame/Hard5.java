@@ -2,6 +2,9 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
+
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
@@ -21,7 +24,7 @@ public class Hard5 extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
-		
+		numRotates=1;
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -43,6 +46,7 @@ public class Hard5 extends BasicGameState{
 			shoot = false;
 			refresh = false;
 			numRotates = 1;
+			Methods.list = new ArrayList<>();
 		}
 		if(rotate){
 			numRotates++;
@@ -78,6 +82,8 @@ public class Hard5 extends BasicGameState{
 				isButtonUp = false;
 				Methods.xRotate =  Methods.findXRotate(xPos-260);
 				Methods.yRotate = Methods.findYRotate(yPos-80);
+				Methods.locationBool[Methods.xRotate][Methods.yRotate] = false;
+
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
@@ -92,6 +98,7 @@ public class Hard5 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(34);
 			}
 		}
@@ -100,6 +107,7 @@ public class Hard5 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Play.canGoOn = false;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(0); //TODO Change this to a high score page or a page to show the user has finished
 			}
 		}

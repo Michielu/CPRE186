@@ -188,11 +188,9 @@ public class Methods extends BasicGameState {
 	public static void generateBoard(){
 		for(int i=0;i<8;i++){
 			for(int j=0; j<8;j++){
-
 				locationBool[i+1][j+1] = true;
 			}
 		}
-
 		if (currentStateNum ==11){
 			generateEasy1();
 		}
@@ -557,6 +555,30 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X3, Y7);
 		location [3][7] = target;
+		
+		if(locationBool[1][8]){
+			startTileUp.draw(X1, Y8);
+		}
+		
+		
+		if(locationBool[1][1]){
+			mDownRight.draw(X1, Y1);
+		}	
+		if(locationBool[2][1]){
+	//		mDownLeft.draw(X2, Y1);
+			mUpLeft.draw(X2, Y1);
+		}
+		if(locationBool[2][8]){	
+	//		mUpRight.draw(X2, Y8);
+			mUpLeft.draw(X2, Y8);
+		}
+		if(locationBool[8][8]){	
+			mUpLeft.draw(X8, Y8);
+		}
+		if(locationBool[8][7]){
+	//		mDownLeft.draw(X8, Y7);
+			mDownRight.draw(X8, Y7);
+		}
 
 		generateRotatedAid();
 	}
@@ -565,6 +587,52 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X4,Y1);
 		location[4][1] = target;
+		
+		if(locationBool[4][8]){	
+			startTileLeft.draw(X4, Y8);
+		}
+		
+		
+		if(locationBool[1][8]){	
+			mUpRight.draw(X1,Y8);
+		}
+		if(locationBool[1][7]){		
+	//		mDownRight.draw(X1, Y7);
+			mDownLeft.draw(X1, Y7);
+		}
+		if(locationBool[8][7]){	
+			mDownLeft.draw(X8, Y7);
+		}
+		if(locationBool[8][8]){	
+	//		mUpLeft.draw(X8, Y8);
+			mDownRight.draw(X8, Y8);
+		}
+		if(locationBool[5][8]){	
+			mUpRight.draw(X5, Y8);
+		}
+		if(locationBool[5][1]){	
+	//		mDownRight.draw(X5, Y1);
+			mDownLeft.draw(X5, Y1);
+		}
+		if(locationBool[8][1]){	
+			mDownLeft.draw(X8, Y1);
+		}
+		if(locationBool[8][2]){	
+			mUpLeft.draw(X8, Y2);
+		}
+		if(locationBool[1][2]){	
+			mUpRight.draw(X1,Y2);
+		}
+		if(locationBool[1][1]){	
+			mDownRight.draw(X1,Y1);
+		}
+		if(locationBool[4][4]){	
+			wallTile.draw(X4,Y4);
+		}
+		
+		
+		
+		
 
 		generateRotatedAid();
 	}
@@ -573,6 +641,45 @@ public class Methods extends BasicGameState {
 		startLight = true;
 		endTile.draw(X7, Y2);
 		location[7][2] = target;
+		
+		
+		
+		if(locationBool[8][1]){	
+			startTileLeft.draw(X8, Y1);
+		}		
+		if(locationBool[1][2]){	
+			mDownRight.draw(X1, Y1);
+		}
+		if(locationBool[1][8]){	
+	//		mUpRight.draw(X1, Y8);
+			mDownRight.draw(X1, Y8);
+		}
+		if(locationBool[8][8]){	
+	//		mUpLeft.draw(X8, Y8);
+			mUpRight.draw(X8, Y8);
+		}
+		if(locationBool[8][4]){	
+			mDownLeft.draw(X8, Y4);
+		}
+		if(locationBool[4][4]){	
+			mDownRight.draw(X4, Y4);
+		}
+		if(locationBool[4][5]){	
+			mUpRight.draw(X4, Y5);
+		}
+		if(locationBool[7][5]){	
+	//		mDownLeft.draw(X7, Y5);
+			mUpRight.draw(X7, Y5);
+		}
+		if(locationBool[7][7]){	
+			mUpLeft.draw(X7, Y7);
+		}
+		if(locationBool[2][7]){	
+			mUpRight.draw(X2, Y7);
+		}
+		if(locationBool[2][2]){	
+			mDownRight.draw(X2, Y2);
+		}
 
 		generateRotatedAid();
 	}
@@ -581,7 +688,45 @@ public class Methods extends BasicGameState {
 		powerOff.draw(820, 590);
 		endTile.draw(X8, Y8);
 		location[8][8] = target;
-
+		
+		if(locationBool[1][8]){	
+			startTileUp.draw(X1, Y8);
+		}
+		if(locationBool[1][1]){	
+//		mDownRight.draw(X1, Y1);
+		mUpLeft.draw(X1, Y1);
+		}
+		if(locationBool[2][1]){	
+			mDownLeft.draw(X2, Y1);
+		}
+		if(locationBool[2][8]){	
+//		mUpRight.draw(X2, Y8);
+		mDownRight.draw(X2, Y8);
+		}
+		if(locationBool[3][8]){	
+			mUpLeft.draw(X3, Y8);
+		}
+		if(locationBool[3][5]){	
+			mDownRight.draw(X3, Y5);
+		}
+		
+		if(locationBool[6][5]){	
+			mDownLeft.draw(X6, Y5);
+		}
+		if(locationBool[6][8]){	
+//		mUpRight.draw(X6, Y8);
+		mUpLeft.draw(X6, Y8);
+		}
+		if(locationBool[7][8]){	
+			mUpLeft.draw(X7, Y8);
+		}
+		if(locationBool[7][1]){	
+			mDownRight.draw(X7, Y1);
+		}
+		if(locationBool[8][1]){	
+			mDownLeft.draw(X8, Y1);
+		}
+	
 		generateRotatedAid();
 	}
 	public static void generateMedium5Rotated(){
@@ -590,6 +735,31 @@ public class Methods extends BasicGameState {
 		endTile.draw(X2, Y2);
 		location[2][2] = target;
 
+		if(locationBool[1][1]){
+			startTileRight.draw(X1, Y1);
+		}
+		if(locationBool[8][1]){
+//		mDownLeft.draw(X8, Y1);
+		mDownRight.draw(X8, Y1);
+		}
+		if(locationBool[8][2]){
+//		mUpLeft.draw(X8, Y2);
+		mDownLeft.draw(X8, Y2);
+		}
+		if(locationBool[5][2]){
+			mDownRight.draw(X5, Y2);
+		}
+		if(locationBool[5][8]){
+//		mUpLeft.draw(X5, Y8);
+		mDownRight.draw(X5, Y8);
+		}
+		if(locationBool[4][8]){
+			mUpRight.draw(X4, Y8);
+		}
+		if(locationBool[4][2]){
+			mDownLeft.draw(X4, Y2);
+		}
+		
 		generateRotatedAid();
 	}
 	public static void generateHard1Rotated(){
@@ -598,6 +768,58 @@ public class Methods extends BasicGameState {
 		endTile.draw(X7, Y1);
 		location[7][1] = target;
 
+		if(locationBool[3][8]){
+			startTileUp.draw(X3, Y8);
+		}
+		
+		if(locationBool[2][8]){
+			mUpRight.draw(X2, Y8);
+		}
+		if(locationBool[2][6]){
+			mDownRight.draw(X2, Y6);
+		}
+		if(locationBool[7][6]){
+			mDownLeft.draw(X7, Y6);
+		}
+		
+		if(locationBool[7][7]){
+			mUpLeft.draw(X7, Y7);
+		}
+		if(locationBool[1][7]){
+			mUpRight.draw(X1, Y7);
+		}
+		if(locationBool[1][5]){
+			mDownRight.draw(X1, Y5);
+		}
+		if(locationBool[3][5]){
+			mUpLeft.draw(X3, Y5);
+		}
+		if(locationBool[3][3]){
+			mDownRight.draw(X3, Y3);
+		}
+		if(locationBool[4][3]){
+			mDownLeft.draw(X4, Y3);
+		}
+		if(locationBool[4][4]){
+			mUpLeft.draw(X4, Y4);
+		}
+		if(locationBool[1][4]){
+			mUpRight.draw(X1, Y4);
+		}
+		if(locationBool[1][1]){
+			mDownRight.draw(X1, Y1);
+		}
+		if(locationBool[7][4]){
+			wallTile.draw(X7, Y4);
+		}
+		
+		if(locationBool[8][3]){
+			mUpRight.draw(X8, Y3);
+		}
+		if(locationBool[8][5]){
+			mDownLeft.draw(X8, Y5);
+		}
+		
 		generateRotatedAid();
 	}
 	public static void generateHard2Rotated(){
@@ -605,6 +827,65 @@ public class Methods extends BasicGameState {
 		powerOff.draw(820, 590);
 		endTile.draw(X1, Y7);
 		location[1][7] = target;
+		
+		if(locationBool[6][3]){
+			startTileUp.draw(X6, Y3);
+		}
+		
+		if(locationBool[6][5]){
+			mUpRight.draw(X6, Y5);
+		}
+		if(locationBool[8][5]){
+			mUpLeft.draw(X8, Y5);
+		}
+		if(locationBool[8][1]){
+			mDownLeft.draw(X8, Y1);
+		}
+		if(locationBool[5][1]){
+			mDownRight.draw(X5, Y1);
+		}
+		if(locationBool[5][3]){
+			mUpLeft.draw(X5,  Y3);
+		}
+		if(locationBool[2][3]){
+			mUpRight.draw(X2, Y3);
+		}
+		if(locationBool[2][1]){
+			mDownRight.draw(X2, Y1);
+		}
+		if(locationBool[3][1]){
+			mDownLeft.draw(X3, Y1);
+		}
+		if(locationBool[3][2]){
+			mUpLeft.draw(X3, Y2);
+		}
+		if(locationBool[1][2]){
+			mDownRight.draw(X1, Y2);
+		}
+		if(locationBool[1][6]){
+			mUpRight.draw(X1, Y6);
+		}
+		if(locationBool[6][6]){
+			mDownLeft.draw(X6, Y6);
+		}
+		if(locationBool[6][8]){
+			mUpLeft.draw(X6, Y8);
+		}
+		if(locationBool[4][8]){
+			mUpRight.draw(X4, Y8);
+		}
+		if(locationBool[4][4]){
+			mDownLeft.draw(X4, Y4);
+		}
+		if(locationBool[3][4]){
+			mDownRight.draw(X3, Y4);
+		}
+		if(locationBool[3][7]){
+			mUpLeft.draw(X3, Y7);
+		}
+		if(locationBool[7][3]){
+			mDownRight.draw(X7,Y3);
+		}
 
 		generateRotatedAid();
 	}
@@ -613,6 +894,65 @@ public class Methods extends BasicGameState {
 		powerOff.draw(820, 590);
 		endTile.draw(X8, Y1);
 		location[8][1] = target;
+		
+		if(locationBool[1][1]){
+			startTileDown.draw(X1, Y1);
+		}
+		
+		if(locationBool[1][8]){
+			mUpRight.draw(X1, Y8);
+		}
+		if(locationBool[2][8]){
+			mUpLeft.draw(X2, Y8);
+		}
+		if(locationBool[2][5]){
+			mDownRight.draw(X2, Y5);
+		}
+		if(locationBool[3][5]){
+			mUpLeft.draw(X3, Y5);
+		}
+		if(locationBool[3][1]){
+	//		mDownRight.draw(X3, Y1);
+			mDownLeft.draw(X3, Y1);
+		}
+		if(locationBool[4][1]){
+			mDownLeft.draw(X4, Y1);
+		}
+		if(locationBool[4][8]){
+			mUpRight.draw(X4, Y8);
+		}
+		if(locationBool[8][8]){
+			mUpLeft.draw(X8, Y8);
+		}
+		if(locationBool[8][7]){
+			mDownLeft.draw(X8,Y7);
+		}
+		if(locationBool[6][7]){
+	//		mUpRight.draw(X6, Y7);
+			mDownRight.draw(X6, Y7);
+		}
+		if(locationBool[6][2]){
+			mDownLeft.draw(X6, Y2);
+		}
+		if(locationBool[5][2]){
+			mUpRight.draw(X5, Y2);
+		}
+		if(locationBool[5][1]){
+			mDownRight.draw(X5, Y1);
+		}
+		if(locationBool[8][2]){
+			wallTile.draw(X8,Y2);
+		}
+		if(locationBool[3][6]){
+			mUpRight.draw(X3, Y6);
+		}
+		if(locationBool[8][6]){
+			mUpLeft.draw(X8, Y6);
+		}
+		if(locationBool[5][5]){
+			mUpLeft.draw(X5, Y5);
+		}
+		
 
 		generateRotatedAid();
 	}
@@ -621,6 +961,59 @@ public class Methods extends BasicGameState {
 		powerOff.draw(820, 590);
 		endTile.draw(X5, Y5);
 		location[5][5] = target;
+		
+		if(locationBool[4][4]){
+			startTileUp.draw(X4, Y4);
+		}
+		
+		if(locationBool[4][6]){
+			mUpRight.draw(X4, Y6);
+		}
+		if(locationBool[6][6]){
+			mUpLeft.draw(X6, Y6);
+		}
+		if(locationBool[6][4]){
+			mDownRight.draw(X6, Y4);
+		}
+		if(locationBool[7][4]){
+			mDownLeft.draw(X7, Y4);
+		}
+		if(locationBool[7][7]){
+			mUpLeft.draw(X7, Y7);
+		}
+		if(locationBool[3][7]){
+			mUpRight.draw(X3, Y7);
+		}
+		if(locationBool[3][3]){
+			mDownRight.draw(X3, Y3);
+		}
+		if(locationBool[8][3]){
+			mUpLeft.draw(X8, Y3);
+		}
+		if(locationBool[8][2]){
+			mDownLeft.draw(X8,Y2);
+		}
+		if(locationBool[2][2]){
+			mDownRight.draw(X2, Y2);
+		}
+		if(locationBool[2][8]){
+			mUpLeft.draw(X2, Y8);
+		}
+		if(locationBool[1][8]){
+			mUpRight.draw(X1, Y8);
+		}
+		if(locationBool[1][5]){
+			mDownRight.draw(X1, Y5);
+		}
+		if(locationBool[4][8]){
+			mDownRight.draw(X4, Y8);
+		}
+		if(locationBool[8][8]){
+			mUpRight.draw(X8, Y8);
+		}
+		if(locationBool[8][6]){
+			wallTile.draw(X8, Y6);
+		}
 
 		generateRotatedAid();
 	}
@@ -630,6 +1023,54 @@ public class Methods extends BasicGameState {
 		endTile.draw(X7, Y3);
 		location[7][3] = target;
 
+		if(locationBool[2][5]){
+			startTileUp.draw(X2, Y5);
+		}
+		
+		if(locationBool[2][4]){
+			mDownRight.draw(X2, Y4);
+		}
+		if(locationBool[4][4]){
+			mDownLeft.draw(X4, Y4);
+		}
+		if(locationBool[4][6]){
+			mUpRight.draw(X4,Y6);
+		}
+		if(locationBool[8][6]){
+			mUpLeft.draw(X8, Y6);
+		}
+		if(locationBool[8][2]){
+			mDownLeft.draw(X8, Y2);
+		}
+		if(locationBool[5][2]){
+			mDownRight.draw(X5, Y2);
+		}
+		if(locationBool[5][7]){
+			mUpLeft.draw(X5, Y7);
+		}
+		if(locationBool[1][7]){
+			mUpRight.draw(X1, Y7);
+		}
+		if(locationBool[1][1]){
+			mDownRight.draw(X1, Y1);
+		}
+		if(locationBool[6][1]){
+			mDownLeft.draw(X6, Y1);
+		}
+		if(locationBool[6][8]){
+			mUpLeft.draw(X6, Y8);
+		}
+		if(locationBool[3][8]){
+			mUpRight.draw(X3, Y8);
+		}
+		if(locationBool[3][3]){
+			mDownRight.draw(X3,Y3);
+		}
+		if(locationBool[2][2]){
+			mDownRight.draw(X2, Y2);
+		}
+		
+		
 		generateRotatedAid();
 	}
 	public static void generateRotatedAid(){
@@ -1082,7 +1523,7 @@ public class Methods extends BasicGameState {
 		location[1][1] = rightDown;
 		wallTile.draw(X7, Y4);
 		location[7][4] = wall;
-		//Distraction tiles TODO add more
+		//Distraction tiles TODO add more also change tiles
 		mUpRight.draw(X8, Y3);
 		location[8][3] = rightUp;
 		mDownLeft.draw(X8, Y5);

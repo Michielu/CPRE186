@@ -14,10 +14,6 @@ public class Easy1 extends BasicGameState{
 	Image gameBoard;
 	public String mouse = "No input yet";
 
-	//public static boolean blankTileOnce = true;
-	//public static Image tileNormal;
-	
-
 	
 	//Created for rotating mirrors thingie
 	public static boolean rotate;
@@ -51,7 +47,7 @@ public class Easy1 extends BasicGameState{
 		//Added these for rotating 
 		if(numRotates <=1){
 			Methods.generateBoard();
-			Methods.list = new ArrayList<>();
+			
 		}
 		else if(numRotates > 1){
 			Methods.generateBoardRotated();
@@ -68,7 +64,7 @@ public class Easy1 extends BasicGameState{
 			numRotates = 1;
 			
 			//Added this
-			//Methods.list = new ArrayList<>();
+			Methods.list = new ArrayList<>();
 		}
 		if(rotate){
 			numRotates++;
@@ -142,6 +138,7 @@ public class Easy1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Easy2.numRotates ++;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(12);
 			}
 		}

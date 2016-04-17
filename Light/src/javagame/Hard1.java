@@ -2,6 +2,9 @@ package javagame;
 
 import org.newdawn.slick.*; 
 import org.newdawn.slick.state.*;
+
+import java.util.ArrayList;
+
 import org.lwjgl.input.Mouse;
 
 //Every screen inherits from BasicGameState. Extends = inherits
@@ -21,6 +24,7 @@ public class Hard1 extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
+		numRotates =1;
 		
 	}
 	
@@ -43,6 +47,7 @@ public class Hard1 extends BasicGameState{
 			shoot = false;
 			refresh = false;
 			numRotates = 1;
+			Methods.list = new ArrayList<>();
 		}
 		if(rotate){
 			numRotates++;
@@ -78,6 +83,8 @@ public class Hard1 extends BasicGameState{
 				isButtonUp = false;
 				Methods.xRotate =  Methods.findXRotate(xPos-260);
 				Methods.yRotate = Methods.findYRotate(yPos-80);
+				Methods.locationBool[Methods.xRotate][Methods.yRotate] = false;
+
 			}
 		}
 		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
@@ -100,6 +107,7 @@ public class Hard1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Play.canGoOn = false;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(30);
 			}
 		}
@@ -108,6 +116,7 @@ public class Hard1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Hard2.numRotates ++;
+				Methods.list = new ArrayList<>();
 				sbg.enterState(32);
 			}
 		}
