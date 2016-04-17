@@ -33,7 +33,7 @@ public class Easy1 extends BasicGameState{
 		
 		//Added this
 		numRotates = 1;
-
+	//	Methods.list = new ArrayList<>();
 		
 	}
 	
@@ -58,7 +58,7 @@ public class Easy1 extends BasicGameState{
 		if(shoot){
 			Methods.shoot();
 		}
-		if(refresh){
+		else if(refresh){
 			shoot = false;
 			refresh = false;
 			numRotates = 1;
@@ -66,7 +66,7 @@ public class Easy1 extends BasicGameState{
 			//Added this
 			Methods.list = new ArrayList<>();
 		}
-		if(rotate){
+		else if(rotate){
 			numRotates++;
 			
 			Methods.changeLocation= true;
@@ -74,17 +74,7 @@ public class Easy1 extends BasicGameState{
 			Methods.rotateMirrorOnce = true;
 
 		}
-		
-		
 
-//		int xPos = Mouse.getX(); //gets the x position
-//		int yPos = Mouse.getY(); //gets the y position
-//		Input input = gc.getInput();
-//		if((xPos<986 && xPos>820)&&(yPos>88&&yPos<130)){
-//			if(input.isMouseButtonDown(0)){
-//				Methods.shoot();
-//			}
-//		}
 
 		
 	}
@@ -137,7 +127,7 @@ public class Easy1 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				Easy2.numRotates ++;
+				//Easy2.numRotates ++;
 				Methods.list = new ArrayList<>();
 				sbg.enterState(12);
 			}
@@ -150,7 +140,6 @@ public class Easy1 extends BasicGameState{
 		}
 
 	}
-	
 	
 	public int getID(){
 		return 11;

@@ -25,7 +25,7 @@ public class Easy2 extends BasicGameState{
 		background = new Image("res/backgrounds/puzzle_background1(1080x720).png");
 		
 		numRotates = 1;
-		
+		//Methods.list = new ArrayList<>();
 		
 	}
 	
@@ -106,7 +106,7 @@ public class Easy2 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				Methods.list = new ArrayList<>();
+				//Methods.list = new ArrayList<>();
 				sbg.enterState(11);
 			}
 		}

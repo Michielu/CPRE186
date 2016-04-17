@@ -18,6 +18,7 @@ public class Medium2 extends BasicGameState{
 	public static int numRotates =0;
 	public static boolean isButtonUp;
 	
+	
 	public Medium2(int state){ 
 		
 	}
