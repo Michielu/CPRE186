@@ -32,7 +32,7 @@ public class Easy1 extends BasicGameState{
 		
 		
 		//Added this
-		numRotates = 1;
+		numRotates = 0;
 	//	Methods.list = new ArrayList<>();
 		
 	}
@@ -52,13 +52,11 @@ public class Easy1 extends BasicGameState{
 		else if(numRotates > 1){
 			Methods.generateBoardRotated();
 		}
-		//System.out.println(numRotates);
-		
 		
 		if(shoot){
 			Methods.shoot();
 		}
-		else if(refresh){
+		 if(refresh){
 			shoot = false;
 			refresh = false;
 			numRotates = 1;
@@ -66,7 +64,7 @@ public class Easy1 extends BasicGameState{
 			//Added this
 			Methods.list = new ArrayList<>();
 		}
-		else if(rotate){
+		 if(rotate){
 			numRotates++;
 			
 			Methods.changeLocation= true;

@@ -733,7 +733,8 @@ public class Methods extends BasicGameState {
 			mDownRight.draw(X2, Y6);
 		}
 		if (locationBool[7][6]) {
-			mDownLeft.draw(X7, Y6);
+			mDownRight.draw(X7,Y6);
+			//mDownLeft.draw(X7, Y6);
 		}
 
 		if (locationBool[7][7]) {
@@ -743,7 +744,8 @@ public class Methods extends BasicGameState {
 			mUpRight.draw(X1, Y7);
 		}
 		if (locationBool[1][5]) {
-			mDownRight.draw(X1, Y5);
+//			mDownRight.draw(X1, Y5);
+			mUpRight.draw(X1, Y5);
 		}
 		if (locationBool[3][5]) {
 			mUpLeft.draw(X3, Y5);
@@ -752,7 +754,8 @@ public class Methods extends BasicGameState {
 			mDownRight.draw(X3, Y3);
 		}
 		if (locationBool[4][3]) {
-			mDownLeft.draw(X4, Y3);
+//			mDownLeft.draw(X4, Y3);
+			mDownRight.draw(X4, Y3);
 		}
 		if (locationBool[4][4]) {
 			mUpLeft.draw(X4, Y4);
@@ -761,7 +764,8 @@ public class Methods extends BasicGameState {
 			mUpRight.draw(X1, Y4);
 		}
 		if (locationBool[1][1]) {
-			mDownRight.draw(X1, Y1);
+//			mDownRight.draw(X1, Y1);
+			mUpRight.draw(X1, Y1);
 		}
 		if (locationBool[7][4]) {
 			wallTile.draw(X7, Y4);
@@ -797,13 +801,15 @@ public class Methods extends BasicGameState {
 			mDownLeft.draw(X8, Y1);
 		}
 		if (locationBool[5][1]) {
-			mDownRight.draw(X5, Y1);
+			mUpLeft.draw(X5, Y1);
+			//mDownRight.draw(X5, Y1);
 		}
 		if (locationBool[5][3]) {
 			mUpLeft.draw(X5, Y3);
 		}
 		if (locationBool[2][3]) {
-			mUpRight.draw(X2, Y3);
+			mDownLeft.draw(X2, Y3);
+			//mUpRight.draw(X2, Y3);
 		}
 		if (locationBool[2][1]) {
 			mDownRight.draw(X2, Y1);
@@ -812,7 +818,8 @@ public class Methods extends BasicGameState {
 			mDownLeft.draw(X3, Y1);
 		}
 		if (locationBool[3][2]) {
-			mUpLeft.draw(X3, Y2);
+			mDownLeft.draw(X3, Y2);
+//			mUpLeft.draw(X3, Y2);
 		}
 		if (locationBool[1][2]) {
 			mDownRight.draw(X1, Y2);
@@ -830,7 +837,8 @@ public class Methods extends BasicGameState {
 			mUpRight.draw(X4, Y8);
 		}
 		if (locationBool[4][4]) {
-			mDownLeft.draw(X4, Y4);
+			mDownRight.draw(X4, Y4);
+			//mDownLeft.draw(X4, Y4);
 		}
 		if (locationBool[3][4]) {
 			mDownRight.draw(X3, Y4);
@@ -872,7 +880,8 @@ public class Methods extends BasicGameState {
 			mDownLeft.draw(X3, Y1);
 		}
 		if (locationBool[4][1]) {
-			mDownLeft.draw(X4, Y1);
+			mDownRight.draw(X4, Y1);
+			//mDownLeft.draw(X4, Y1);
 		}
 		if (locationBool[4][8]) {
 			mUpRight.draw(X4, Y8);
@@ -891,7 +900,8 @@ public class Methods extends BasicGameState {
 			mDownLeft.draw(X6, Y2);
 		}
 		if (locationBool[5][2]) {
-			mUpRight.draw(X5, Y2);
+			mDownRight.draw(X5, Y2);
+			//mUpRight.draw(X5, Y2);
 		}
 		if (locationBool[5][1]) {
 			mDownRight.draw(X5, Y1);
@@ -935,7 +945,8 @@ public class Methods extends BasicGameState {
 			mDownLeft.draw(X7, Y4);
 		}
 		if (locationBool[7][7]) {
-			mUpLeft.draw(X7, Y7);
+			mDownLeft.draw(X7, Y7);
+			//mUpLeft.draw(X7, Y7);
 		}
 		if (locationBool[3][7]) {
 			mUpRight.draw(X3, Y7);
@@ -944,10 +955,12 @@ public class Methods extends BasicGameState {
 			mDownRight.draw(X3, Y3);
 		}
 		if (locationBool[8][3]) {
-			mUpLeft.draw(X8, Y3);
+			mDownRight.draw(X8, Y3);
+			//mUpLeft.draw(X8, Y3);
 		}
 		if (locationBool[8][2]) {
-			mDownLeft.draw(X8, Y2);
+			mDownRight.draw(X8, Y2);
+//			mDownLeft.draw(X8, Y2);
 		}
 		if (locationBool[2][2]) {
 			mDownRight.draw(X2, Y2);
@@ -957,6 +970,7 @@ public class Methods extends BasicGameState {
 		}
 		if (locationBool[1][8]) {
 			mUpRight.draw(X1, Y8);
+			//mUpRight.draw(X1, Y8);
 		}
 		if (locationBool[1][5]) {
 			mDownRight.draw(X1, Y5);
@@ -985,7 +999,8 @@ public class Methods extends BasicGameState {
 		}
 
 		if (locationBool[2][4]) {
-			mDownRight.draw(X2, Y4);
+			mUpRight.draw(X2, Y4);
+			//mDownRight.draw(X2, Y4);
 		}
 		if (locationBool[4][4]) {
 			mDownLeft.draw(X4, Y4);
@@ -994,7 +1009,8 @@ public class Methods extends BasicGameState {
 			mUpRight.draw(X4, Y6);
 		}
 		if (locationBool[8][6]) {
-			mUpLeft.draw(X8, Y6);
+			mDownLeft.draw(X8, Y6);
+			//mUpLeft.draw(X8, Y6);
 		}
 		if (locationBool[8][2]) {
 			mDownLeft.draw(X8, Y2);
@@ -1006,13 +1022,15 @@ public class Methods extends BasicGameState {
 			mUpLeft.draw(X5, Y7);
 		}
 		if (locationBool[1][7]) {
-			mUpRight.draw(X1, Y7);
+			mUpLeft.draw(X1, Y7);
+			//mUpRight.draw(X1, Y7);
 		}
 		if (locationBool[1][1]) {
 			mDownRight.draw(X1, Y1);
 		}
 		if (locationBool[6][1]) {
-			mDownLeft.draw(X6, Y1);
+			mUpLeft.draw(X6, Y1);
+			//mDownLeft.draw(X6, Y1);
 		}
 		if (locationBool[6][8]) {
 			mUpLeft.draw(X6, Y8);
@@ -1453,26 +1471,42 @@ public class Methods extends BasicGameState {
 		location[2][8] = rightUp;
 		mDownRight.draw(X2, Y6);
 		location[2][6] = rightDown;
-		mDownLeft.draw(X7, Y6);
-		location[7][6] = leftDown;
+		
+//		mDownLeft.draw(X7, Y6);
+//		location[7][6] = leftDown;
+		mDownRight.draw(X7, Y6);
+		location[7][6] = rightDown;
+		
 		mUpLeft.draw(X7, Y7);
 		location[7][7] = leftUp;
 		mUpRight.draw(X1, Y7);
 		location[1][7] = rightUp;
-		mDownRight.draw(X1, Y5);
-		location[1][5] = rightDown;
+		
+//		mDownRight.draw(X1, Y5);
+//		location[1][5] = rightDown;
+		mUpRight.draw(X1, Y5);
+		location[1][5] = rightUp;
+		
 		mUpLeft.draw(X3, Y5);
 		location[3][5] = leftUp;
 		mDownRight.draw(X3, Y3);
 		location[3][3] = rightDown;
-		mDownLeft.draw(X4, Y3);
-		location[4][3] = leftDown;
+		
+//		mDownLeft.draw(X4, Y3);
+//		location[4][3] = leftDown;
+		mDownRight.draw(X4, Y3);
+		location[4][3] = rightDown;
+		
 		mUpLeft.draw(X4, Y4);
 		location[4][4] = leftUp;
 		mUpRight.draw(X1, Y4);
 		location[1][4] = rightUp;
-		mDownRight.draw(X1, Y1);
-		location[1][1] = rightDown;
+		
+//		mDownRight.draw(X1, Y1);
+//		location[1][1] = rightDown;
+		mUpRight.draw(X1, Y1);
+		location[1][1] = rightUp;
+		
 		wallTile.draw(X7, Y4);
 		location[7][4] = wall;
 		// Distraction tiles TODO add more also change tiles
@@ -1504,18 +1538,30 @@ public class Methods extends BasicGameState {
 		location[8][5] = leftUp;
 		mDownLeft.draw(X8, Y1);
 		location[8][1] = leftDown;
-		mDownRight.draw(X5, Y1);
-		location[5][1] = rightDown;
+		
+//		mDownRight.draw(X5, Y1);
+//		location[5][1] = rightDown;
+		mUpLeft.draw(X5, Y1);
+		location[5][1] = leftUp;
+		
 		mUpLeft.draw(X5, Y3);
 		location[5][3] = leftUp;
-		mUpRight.draw(X2, Y3);
-		location[2][3] = rightUp;
+		
+//		mUpRight.draw(X2, Y3);
+//		location[2][3] = rightUp;
+		mDownLeft.draw(X2, Y3);
+		location[2][3] = leftDown;
+		
 		mDownRight.draw(X2, Y1);
 		location[2][1] = rightDown;
 		mDownLeft.draw(X3, Y1);
 		location[3][1] = leftDown;
-		mUpLeft.draw(X3, Y2);
-		location[3][2] = leftUp;
+		
+//		mUpLeft.draw(X3, Y2);
+//		location[3][2] = leftUp;
+		mDownLeft.draw(X3, Y2);
+		location[3][2] = leftDown;
+		
 		mDownRight.draw(X1, Y2);
 		location[1][2] = rightDown;
 		mUpRight.draw(X1, Y6);
@@ -1526,8 +1572,12 @@ public class Methods extends BasicGameState {
 		location[6][8] = leftUp;
 		mUpRight.draw(X4, Y8);
 		location[4][8] = rightUp;
-		mDownLeft.draw(X4, Y4);
-		location[4][4] = leftDown;
+		
+//		mDownLeft.draw(X4, Y4);
+//		location[4][4] = leftDown;
+		mDownRight.draw(X4, Y4);
+		location[4][4] = rightDown;
+		
 		mDownRight.draw(X3, Y4);
 		location[3][4] = rightDown;
 		mUpLeft.draw(X3, Y7);
@@ -1565,8 +1615,12 @@ public class Methods extends BasicGameState {
 		// location[3][1] = rightDown;
 		mDownLeft.draw(X3, Y1);
 		location[3][1] = leftDown;
-		mDownLeft.draw(X4, Y1);
-		location[4][1] = leftDown;
+		
+//		mDownLeft.draw(X4, Y1);
+//		location[4][1] = leftDown;
+		mDownRight.draw(X4, Y1);
+		location[4][1] = rightDown;
+		
 		mUpRight.draw(X4, Y8);
 		location[4][8] = rightUp;
 		mUpLeft.draw(X8, Y8);
@@ -1579,8 +1633,12 @@ public class Methods extends BasicGameState {
 		location[6][7] = rightDown;
 		mDownLeft.draw(X6, Y2);
 		location[6][2] = leftDown;
-		mUpRight.draw(X5, Y2);
-		location[5][2] = rightUp;
+		
+//		mUpRight.draw(X5, Y2);
+//		location[5][2] = rightUp;
+		mDownRight.draw(X5, Y2);
+		location[5][2] = rightDown;
+		
 		mDownRight.draw(X5, Y1);
 		location[5][1] = rightDown;
 		wallTile.draw(X8, Y2);
@@ -1618,22 +1676,37 @@ public class Methods extends BasicGameState {
 		location[6][4] = rightDown;
 		mDownLeft.draw(X7, Y4);
 		location[7][4] = leftDown;
-		mUpLeft.draw(X7, Y7);
-		location[7][7] = leftUp;
+		
+//		mUpLeft.draw(X7, Y7);
+//		location[7][7] = leftUp;
+		mDownLeft.draw(X7, Y7);
+		location[7][7] = leftDown;
+		
 		mUpRight.draw(X3, Y7);
 		location[3][7] = rightUp;
 		mDownRight.draw(X3, Y3);
 		location[3][3] = rightDown;
-		mUpLeft.draw(X8, Y3);
-		location[8][3] = leftUp;
-		mDownLeft.draw(X8, Y2);
-		location[8][2] = leftDown;
+		
+//		mUpLeft.draw(X8, Y3);
+//		location[8][3] = leftUp;
+		mDownRight.draw(X8, Y3);
+		location[8][3] = rightDown;
+		
+//		mDownLeft.draw(X8, Y2);
+//		location[8][2] = leftDown;
+		mDownRight.draw(X8, Y2);
+		location[8][2] = rightDown;
+		
 		mDownRight.draw(X2, Y2);
 		location[2][2] = rightDown;
 		mUpLeft.draw(X2, Y8);
 		location[2][8] = leftUp;
+		
+//		mUpRight.draw(X1, Y8);
+//		location[1][8] = rightUp;
 		mUpRight.draw(X1, Y8);
 		location[1][8] = rightUp;
+		
 		mDownRight.draw(X1, Y5);
 		location[1][5] = rightDown;
 		// TODO add distracting mirrors and walls
@@ -1660,26 +1733,42 @@ public class Methods extends BasicGameState {
 
 		endTile.draw(X7, Y3);
 		location[7][3] = target;
-		mDownRight.draw(X2, Y4);
-		location[2][4] = rightDown;
+		
+//		mDownRight.draw(X2, Y4);
+//		location[2][4] = rightDown;
+		mUpRight.draw(X2, Y4);
+		location[2][4] = rightUp;
+		
 		mDownLeft.draw(X4, Y4);
 		location[4][4] = leftDown;
 		mUpRight.draw(X4, Y6);
 		location[4][6] = rightUp;
-		mUpLeft.draw(X8, Y6);
-		location[8][6] = leftUp;
+		
+//		mUpLeft.draw(X8, Y6);
+//		location[8][6] = leftUp;
+		mDownLeft.draw(X8, Y6);
+		location[8][6] = leftDown;
+		
 		mDownLeft.draw(X8, Y2);
 		location[8][2] = leftDown;
 		mDownRight.draw(X5, Y2);
 		location[5][2] = rightDown;
 		mUpLeft.draw(X5, Y7);
 		location[5][7] = leftUp;
-		mUpRight.draw(X1, Y7);
-		location[1][7] = rightUp;
+		
+//		mUpRight.draw(X1, Y7);
+//		location[1][7] = rightUp;
+		mUpLeft.draw(X1, Y7);
+		location[1][7] = leftUp;
+		
 		mDownRight.draw(X1, Y1);
 		location[1][1] = rightDown;
-		mDownLeft.draw(X6, Y1);
-		location[6][1] = leftDown;
+		
+//		mDownLeft.draw(X6, Y1);
+//		location[6][1] = leftDown;
+		mUpLeft.draw(X6, Y1);
+		location[6][1] = leftUp;
+		
 		mUpLeft.draw(X6, Y8);
 		location[6][8] = leftUp;
 		mUpRight.draw(X3, Y8);
@@ -1691,7 +1780,10 @@ public class Methods extends BasicGameState {
 		location[2][2] = rightDown;
 	}
 
-	// Clear all the mirrors from the array
+	/**
+	 *  Clear all the mirrors from the array
+	 *  Used for going to one level to another
+	 */
 	public static void clearArray() {
 		int rows = location.length;
 		int col = location[0].length;

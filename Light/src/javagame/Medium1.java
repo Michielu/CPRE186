@@ -24,7 +24,7 @@ public class Medium1 extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		//res/backgrounds/puzzle_baclground2 - has background spelled wrong
 		gameBoard = new Image("res/backgrounds/puzzle_baclground2(1080x720).png");
-		numRotates =1;
+		numRotates =0;
 		
 	}
 	

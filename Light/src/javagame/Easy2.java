@@ -24,7 +24,7 @@ public class Easy2 extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		background = new Image("res/backgrounds/puzzle_background1(1080x720).png");
 		
-		numRotates = 1;
+		numRotates = 0;
 		//Methods.list = new ArrayList<>();
 		
 	}
