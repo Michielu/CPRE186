@@ -25,8 +25,6 @@ public class Easy2 extends BasicGameState{
 		background = new Image("res/backgrounds/puzzle_background1(1080x720).png");
 		
 		numRotates = 0;
-		//Methods.list = new ArrayList<>();
-		
 	}
 	
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -74,13 +72,12 @@ public class Easy2 extends BasicGameState{
 		if((xPos>890 && xPos<1074) && (yPos<720 && yPos > 655)){
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
+				refresh = true;
 				sbg.enterState(0);
 			}
 		}
-		// Added ALL OF THIS for game
 		if ((xPos > 260 && xPos < 820) && (yPos > 80 && yPos < 640)) {
 			if (input.isMouseButtonDown(0)) {
-				// ADDED THIS FOR ROTATES
 				isButtonUp = true;
 			}
 		}

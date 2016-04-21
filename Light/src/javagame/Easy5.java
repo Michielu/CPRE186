@@ -69,6 +69,7 @@ public class Easy5 extends BasicGameState{
 		if((xPos>890 && xPos<1074) && (yPos<720 && yPos > 655)){
 			if(input.isMouseButtonDown(0)){
 				Play.canGoOn = false;
+				refresh = true;
 				sbg.enterState(0);
 			}
 		}
