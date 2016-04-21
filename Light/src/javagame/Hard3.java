@@ -98,7 +98,7 @@ public class Hard3 extends BasicGameState{
 		if((xPos<312 && xPos>280)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(32);
 			}
 		}
@@ -107,7 +107,7 @@ public class Hard3 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Hard4.numRotates ++;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(34);
 			}
 		}

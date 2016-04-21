@@ -14,8 +14,6 @@ public class Easy1 extends BasicGameState{
 	Image gameBoard;
 	public String mouse = "No input yet";
 
-	
-	//Created for rotating mirrors thingie
 	public static boolean rotate;
 	public int numRotates =0;
 	public static boolean isButtonUp;
@@ -27,13 +25,7 @@ public class Easy1 extends BasicGameState{
 	}
 	public void init(GameContainer gc, StateBasedGame sbg)throws SlickException{
 		gameBoard = new Image("res/backgrounds/puzzle_background1(1080x720).png");
-		//tileNormal = new Image("res/tile/blank_tile(70x70).png");
-		
-		
-		
-		//Added this
 		numRotates = 0;
-	//	Methods.list = new ArrayList<>();
 		
 	}
 	
@@ -44,7 +36,6 @@ public class Easy1 extends BasicGameState{
 		Methods.blankTiles();
 
 			
-		//Added these for rotating 
 		if(numRotates <=1){
 			Methods.generateBoard();
 			
@@ -60,8 +51,6 @@ public class Easy1 extends BasicGameState{
 			shoot = false;
 			refresh = false;
 			numRotates = 1;
-			
-			//Added this
 			Methods.list = new ArrayList<>();
 		}
 		 if(rotate){
@@ -118,6 +107,7 @@ public class Easy1 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				refresh = true;
 				sbg.enterState(10);
 			}
 		}
@@ -125,8 +115,9 @@ public class Easy1 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				//Easy2.numRotates ++;
-				Methods.list = new ArrayList<>();
+				Easy2.numRotates ++;
+				//Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(12);
 			}
 		}

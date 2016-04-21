@@ -103,6 +103,7 @@ public class Medium1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Play.canGoOn = false;
+				refresh = true;
 				sbg.enterState(20);
 			}
 		}
@@ -111,7 +112,7 @@ public class Medium1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Medium2.numRotates ++;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(22);
 			}
 		}

@@ -99,7 +99,8 @@ public class Easy4 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				Methods.list = new ArrayList<>();
+				refresh = true;
+				//Methods.list = new ArrayList<>();
 				sbg.enterState(13);
 			}
 		}
@@ -107,8 +108,9 @@ public class Easy4 extends BasicGameState{
 		if((xPos<802 && xPos>770)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
+				refresh = true;
 				Easy5.numRotates ++;
-				Methods.list = new ArrayList<>();
+//				Methods.list = new ArrayList<>();
 				sbg.enterState(15);
 			}
 		}

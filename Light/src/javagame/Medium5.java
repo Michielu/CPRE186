@@ -101,7 +101,7 @@ public class Medium5 extends BasicGameState{
 		if((xPos<311 && xPos>279)&&(yPos>16&&yPos<61)){
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(24);
 			}
 		}
@@ -110,7 +110,7 @@ public class Medium5 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Play.canGoOn = false;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(30);
 			}
 		}

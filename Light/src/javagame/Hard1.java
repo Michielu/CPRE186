@@ -107,7 +107,7 @@ public class Hard1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Play.canGoOn = false;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(30);
 			}
 		}
@@ -116,7 +116,7 @@ public class Hard1 extends BasicGameState{
 			if(Play.canContinue&&(input.isMouseButtonDown(0))){
 				Play.canContinue = false;
 				Hard2.numRotates ++;
-				Methods.list = new ArrayList<>();
+				refresh = true;
 				sbg.enterState(32);
 			}
 		}
