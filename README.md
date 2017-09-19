@@ -1,2 +1,3 @@
 # CPRE186
-This is a puzzle game
+
+Project in the Spring of 2016. 
